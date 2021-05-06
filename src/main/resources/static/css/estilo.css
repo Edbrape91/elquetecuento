@@ -1,0 +1,163 @@
+#FondoPantalla{
+
+    background-image:url("../img/fondo.jpg");
+    background-size:cover;
+    height: 100vh;
+}
+
+
+.navbar-dark .navbar-nav .nav-link{
+    margin-right: 12px;
+    color:white;
+} 
+
+.icono{
+    margin-right: 12px;
+    color:white;
+} 
+
+.descripcion{
+    font-size: 15px;
+    color: white;
+}
+
+.menus{
+
+    background-color: rgb(135,90,123);
+    
+}
+
+
+.titulopagina{
+    padding-top: 50px;
+    font-size: 20px;
+    color: grey;
+
+}
+
+.busqueda{
+
+    border: 0;
+    border-bottom: 2px solid grey;
+    margin-right: 10px;
+
+}
+
+.botonpagina{
+    font-weight: bold;
+    font-size: 17px;
+    color: grey;
+
+}
+
+.botonesform{
+
+    color: grey;
+    font-size: 12px;
+}
+
+.menuconver{
+    font-size: 15px;
+    background-color: #282F33;
+    padding-top: 15px;
+    padding-left: 0px;
+    padding-right:0px;
+}
+
+.listaconver{
+    list-style: none;
+    color: white;
+    padding-left: 15px;
+}
+    
+.boton1{
+    background-color: #138496;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.boton1:hover{
+
+    background-color: #146453;
+    color: grey;
+}
+
+.tablita{
+
+    color: grey;
+    
+}
+
+
+.menuder:hover {
+
+    background-color: rgb(104,70,95);
+
+}
+
+.botonnav{
+
+    color: white;
+    margin-top: 3px;
+    text-decoration: none;
+}
+
+.botonnav:hover {
+
+    background-color: rgb(104,70,95);
+    color: grey;
+}
+
+.iconosmenu{
+
+    width: 50px; 
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.tituloajustes{
+
+    background-color: #cfcfcf;
+    margin-top: 10px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.flechas{
+
+    color: #cfcfcf;
+
+}
+
+.form-check-input:checked {
+    background-color: #138496;
+    border-color: #138496;
+}
+
+.or_div {
+    text-align: center;
+    position: relative;
+    margin-bottom: 32px;
+    min-height: 22px;
+}
+
+.or_div::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    background: rgb(204, 204, 204);
+    left: 0px;
+}
+
+.or_span {
+    display: inline-block;
+    margin: 0px auto;
+    background: rgb(255, 255, 255);
+    padding: 0px 16px;
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}

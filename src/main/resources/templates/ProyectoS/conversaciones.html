@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="css\bootstrap.min.css" />
+    <link rel="stylesheet" href="css\estilo.css">
+    </link>
+    <script src="js\jquery-3.6.0.min.js"></script>
+    <script src="js\bootstrap.min.js"></script>
+    <script src="js\popper.js"></script>
+    <script src="https://kit.fontawesome.com/e22ea825df.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid px-0" >
+        <nav class="navbar navbar-expand-lg navbar-dark menus">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="/index"><i class="fas fa-th icononav"></i></a>
+            <a class="navbar-brand" href="/index" style="font-weight: bold;">Conversaciones</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-comments"></i>
+                            </a>   
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="far fa-clock"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown pt-2 ">
+                            <a class="nav-item dropdown-toggle icono" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-tools"></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Opcion 1</a></li>
+                                <li><a class="dropdown-item" href="#">Opcion 2</a></li>
+                                <li><a class="dropdown-item" href="#">Opcion 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-user-circle nav-item"></i>Apasoft</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="container-fluid">
+    
+    <div class="row pt-3">
+        <div class="col-6">
+            <span class="titulopagina">Bandeja de entrada</span>
+        </div>
+        <div class="col-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control busqueda" placeholder="Buscar...">
+                <i class="fa fa-search" style="color: #ccc; padding-top: 10px; padding-right: 20px"></i>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="row pb-3" style="border-bottom: solid 2px lightgray;">
+            <div class="col-6">
+               <button class="btn"><span class="botonpagina">Marcar todo como leído</span></button>
+            </div>
+            <div class="col-6">
+                <button class="btn"><i class="fas fa-filter botonesform"><span class="botonesform ms-1">Filtros</span></i></button>
+                <button class="btn"><i class="fas fa-star botonesform"><span class="botonesform ms-1">Favoritos</span></i></button>
+            </div>
+    </div>
+
+    <div class="row ps-2" >
+        <div class="col-2 menuconver">
+            <ul class="listaconver">
+                <li><i class="fas fa-inbox me-1"></i>Bandeja de entrada</li>
+                <li><i class="far fa-star me-1"></i>Destacado</li>
+                <li><i class="fas fa-history me-1"></i>Historial</li>
+            </ul>
+            <hr style="color: white;">
+            <ul class="listaconver">
+                <li style="color:grey; font-size: 20px">Canales</li>
+                <ul class="listaconver">
+                    <li><i class="fas fa-hashtag me-1"></i>General</li>
+                </ul>
+                <li style="color:grey; font-size: 20px">Mensajes directos</li>
+                <ul class="listaconver">
+                    <li><i class="fas fa-heart me-1" style="color: rgb(0,160,157);"></i>Odoobot</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
