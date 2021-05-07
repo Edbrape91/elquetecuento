@@ -1,6 +1,6 @@
 #FondoPantalla{
 
-    background-image:url("../img/fondo.jpg");
+    background-image:url("../img/montanas-minimalista.jpg");
     background-size:cover;
     height: 100vh;
 }
@@ -23,7 +23,7 @@
 
 .menus{
 
-    background-color: rgb(135,90,123);
+    background-color: #212529;
     
 }
 
@@ -91,7 +91,7 @@
 
 .menuder:hover {
 
-    background-color: rgb(104,70,95);
+    background-color: #146453;
 
 }
 
@@ -104,7 +104,7 @@
 
 .botonnav:hover {
 
-    background-color: rgb(104,70,95);
+    background-color: #146453;
     color: grey;
 }
 

@@ -10,20 +10,25 @@ import javax.persistence.Table;
 public class Activity {
 
 	@Id
-	private int codigoactividad;
+	private Integer codigoactividad;
 	private String nombreactividad;
-	public int getcodigoactividad() {
+	public Integer getCodigoactividad() {
 		return codigoactividad;
 	}
-	public void setcodigoactividad(int codigoactividad) {
+	public void setCodigoactividad(Integer codigoactividad) {
 		this.codigoactividad = codigoactividad;
 	}
-	public String getnombreactividad() {
+	public String getNombreactividad() {
 		return nombreactividad;
 	}
-	public void setnombreactividad(String nombreactividad) {
+	public void setNombreactividad(String nombreactividad) {
 		this.nombreactividad = nombreactividad;
 	}
+	
+	
+	
+	
+	
 	
 
 }

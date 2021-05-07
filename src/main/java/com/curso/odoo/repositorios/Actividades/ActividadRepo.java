@@ -1,9 +1,11 @@
 package com.curso.odoo.repositorios.Actividades;
 
-import org.springframework.data.repository.CrudRepository;
-
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import com.curso.odoo.model.Actividades.Activity;
 
-public interface ActividadRepo extends CrudRepository<Activity, Integer> {
+
+@Repository
+public interface ActividadRepo extends JpaRepository<Activity, Integer> {
 
 }
