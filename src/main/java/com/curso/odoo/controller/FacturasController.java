@@ -29,8 +29,8 @@ public class FacturasController {
 			
 			Activity activity_1 = new Activity();
 			
-			activity_1.setcodigoactividad(codigoactividad);
-			activity_1.setnombreactividad(nombreactividad);
+			activity_1.setCodigoactividad(codigoactividad);
+			activity_1.setNombreactividad(nombreactividad);
 			
 			actividadRepo.save(activity_1);
 			
