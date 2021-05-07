@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Index</title>
+        <link rel="stylesheet" href="css\bootstrap.min.css" />
+        <link rel="stylesheet" href="css\estilo.css">
+        </link>
+        <script src="js\jquery-3.6.0.min.js"></script>
+        <script src="js\bootstrap.min.js"></script>
+        <script src="js\popper.js"></script>
+        <script src="https://kit.fontawesome.com/e22ea825df.js" crossorigin="anonymous"></script>
+    
+    </head>
+<body>
+    <form id="form1">
+        <div class="container">
+            <div class="row">
+          <div class="col-md-6">
+                <p>Click en el ojo para mostrar / ocultar</p>
+                <label>Ingrese Contraseña</label>
+                <div class="input-group">
+              <input ID="txtPassword" type="Password" Class="form-control">
+              <div class="input-group-append">
+                    <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+                  </div>
+            </div>
+              </div>
+          <div class="col-md-6">
+                <p>Verificar para mostrar / ocultar con chekbox</p>
+                <label>Ingrese Contraseña</label>
+                <div class="input-group">
+              <input ID="Password" type="Password" Class="form-control">
+              <div class="input-group-append"> <span class="input-group-text">
+                <input ID="ShowPassword" type="checkbox" />
+                </span> </div>
+            </div>
+              </div>
+        </div>
+          </div>
+        </form>
+        
+</body>
+<script type="text/javascript">
+    function mostrarPassword(){
+            var cambio = document.getElementById("txtPassword");
+            if(cambio.type == "password"){
+                cambio.type = "text";
+                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            }else{
+                cambio.type = "password";
+                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
+        } 
+        
+        $(document).ready(function () {
+        //CheckBox mostrar contraseña
+        $('#ShowPassword').click(function () {
+            $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+        });
+    });
+    </script>
+</html>

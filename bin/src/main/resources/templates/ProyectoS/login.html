@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Index</title>
+<link rel="stylesheet" href="css\bootstrap.min.css" />
+<link rel="stylesheet" href="css\estilo.css">
+<link rel="stylesheet" href="css\login.css">
+<script src="js\jquery-3.6.0.min.js"></script>
+<script src="js\bootstrap.min.js"></script>
+<script src="js\popper.js"></script>
+<script src="https://kit.fontawesome.com/e22ea825df.js"
+	crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+
+
+</head>
+
+<body>
+	<div class="principal">
+		<div class="logo" style="">
+			<img src="./img/logoPagina.png" class="align-self-start mr-3"
+				height="64px" width="64px">
+
+		</div>
+		<div class="contenedor">
+			<div class="formulario">
+				<h3>
+					Inicia sesión con <a style="padding: 10px;"
+						class="btn btn-primary-light" href="https://twitter.com/login"
+						role="button"><img src="img/twitter-logo.jpg" width="25px"
+						height="25px"></a> <a style="padding: 10px;"
+						class="btn btn-primary-light" href="https://www.facebook.com/"
+						role="button"><img src="img/facebook.png" width="25px"
+						height="25px"></a> <a style="padding: 10px;"
+						class="btn btn-primary-light"
+						href="https://accounts.google.com/signin/v2/identifier?hl=es&amp;continue=https%3A%2F%2Fwww.google.es%2F&amp;ec=GAlAmgQ&amp;flowName=GlifWebSignIn&amp;flowEntry=AddSession"
+						role="button"><img src="img/googlelogo.jpg" width="25px"
+						height="25px"></a>
+				</h3>
+
+
+
+				<div class="or_div">
+					<span class="or_span">Or</span>
+				</div>
+					<div class="row col-md">
+					<form>
+						<div class="form-group" style="margin-bottom: 15px;">
+							<label for="exampleInputEmail1">Nombre de Usuario</label> <input
+								type="text" class="form-control" id="InputUsuario"
+								name="Usuario" placeholder="Introduzca su usuario">
+						</div>
+						<div class="form-group" style="margin-bottom: 15px;">
+							<label for="InputPassword">Contraseña</label>
+							<div style="display: flex;">
+								<input type="password" class="form-control" id="InputPassword"
+									placeholder="Introduzca su contraseña" style="" name="Contrass">
+								<div class="form-group">
+									<button id="show_password" class="btn btn-primary btn_verde"
+										type="button" onclick="mostrarPassword()">
+										<span class="fa fa-eye-slash icon" aria-hidden="true"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-check" style="margin-bottom: 15px;">
+							<input type="checkbox" class="form-check-input"
+								id="InputCheck" name="Checkin"> <label class="form-check-label"
+								for="exampleCheck1">Recuerda mis credenciales</label>
+						</div>
+						<div style="margin-bottom: 15px;">
+							<a id="BotonAcceso" type="submit" class="btn btn-primary btn_verde" href="/index">Acceder</a>
+							<a id="BotonRegistro" class="btn btn-primary" href="/registro" role="button">Registrarse</a>
+						</div>
+						<div class="col" style="margin-bottom: 15px;">
+							<h6>¿Has olvidado tu clave o tu usuario?</h6>
+							<a id="BotonRestaurar" class="btn btn-primary-light " style="color: #ffc107" role="button" href="#">Restaurar</a>
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+<script type="text/javascript">
+	function mostrarPassword() {
+		var cambio = document.getElementById("InputPassword");
+		if (cambio.type == "password") {
+			cambio.type = "text";
+			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+		} else {
+			cambio.type = "password";
+			$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+		}
+	}
+</script>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="css\bootstrap.min.css" />
+    <link rel="stylesheet" href="css\estilo.css">
+    </link>
+    <script src="js\jquery-3.6.0.min.js"></script>
+    <script src="js\bootstrap.min.js"></script>
+    <script src="js\popper.js"></script>
+    <script src="https://kit.fontawesome.com/e22ea825df.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid px-0" >
+        <nav class="navbar navbar-expand-lg navbar-dark menus">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="/index"><i class="fas fa-th icononav"></i></a>
+            <a class="navbar-brand" href="/index" style="font-weight: bold;">Facturas/Contabilidad</a>
+            <div class="collapse navbar-collapse ps-3" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item menuder"><a href="/clientes" class="nav-link">Clientes</a></li>
+                    <li class="nav-item menuder"><a href="#" class="nav-link ">Proveedores</a></li>
+                    <li class="nav-item menuder"><a href="#" class="nav-link">Informes</a></li>
+                    <li class="nav-item menuder"><a href="#" class="nav-link">Configuración</a></li>
+                </ul>
+            </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-comments"></i>
+                                <span class="badge badge-pill badge-info" style= "background-color: #138496; font-size: 9px; border-radius: 0.40rem; position: absolute;">1</span>
+                            </a>   
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="far fa-clock"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown pt-2 ">
+                            <a class="nav-item dropdown-toggle icono" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-tools"></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Opcion 1</a></li>
+                                <li><a class="dropdown-item" href="#">Opcion 2</a></li>
+                                <li><a class="dropdown-item" href="#">Opcion 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-user-circle nav-item"></i>Apasoft</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="container-fluid">
+    
+    <div class="row pt-3">
+        <div class="col-6">
+            <span class="titulopagina">Facturas</span>
+        </div>
+        <div class="col-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control busqueda" placeholder="Buscar...">
+                <i class="fa fa-search" style="color: #ccc; padding-top: 10px; padding-right: 20px"></i>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="row pb-3" style="border-bottom: solid 2px lightgray;">
+            <div class="col-6">
+                <a type="button" class="btn btn-secondary boton1" href="/FormFacturas">Crear<a>
+                <a class="btn" style="color: #138496;" href="#">Cargar<a>
+            </div>
+            <div class="col-3">
+                <button class="btn"><i class="fas fa-filter botonesform"><span class="botonesform ms-1">Filtros</span></i></button>
+                <button class="btn"><i class="fas fa-bars botonesform"><span class="botonesform ms-1">Agrupar por</span></i></button>
+                <button class="btn"><i class="fas fa-star botonesform"><span class="botonesform ms-1">Favoritos</span></i></button>
+            </div>
+            <div class="col-3 text-end">
+                <button class="btn"><i class="fas fa-list botonesform"></i></button>
+                <button class="btn"><i class="fas fa-th-large botonesform"></i></button>
+            </div>
+    </div>
+
+    <div class="row">
+        <table class="table tablita">
+            <thead>
+                <tr>
+                <th scope="col"><input class="form-check-input ms-3" type="checkbox" value=""></th>
+                <th scope="col">Número</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Fecha Factura</th>
+                <th scope="col">Fecha Vencimiento</th>
+                <th scope="col">Actividad siguiente</th>
+                <th scope="col" style="text-align: right;">Impuestos Excluidos</th>
+                <th scope="col" style="text-align: right;">Total</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Estado de Pago</th>
+                <th scope="col" style="text-align: right;"><i class="fas fa-ellipsis-v me-3"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row"><input class="form-check-input ms-3" type="checkbox" value=""></th>
+                <td>REF001</td>
+                <td></td>
+                <td>13/04/2021</td>
+                <td></td>
+                <td><i class="far fa-clock me-1" style="color:yellow; "></i>Volutpat Blandit</td>                
+                <td style="text-align: right;">16.745,00 €</td>
+                <td style="text-align: right;">51.569,00 €</td>
+                <td><mark style="background-color: #0fa7a9; border-radius:10px; color: white;">Borrador</mark></td>
+                <td><mark style="background-color: #0fa95c; border-radius:10px; color: white;">Pagados</mark></td>
+                <td></td>
+                </tr>
+                <tr>
+                <th scope="row"><input class="form-check-input ms-3" type="checkbox" value=""></th>
+                <td>REF002</td>
+                <td></td>
+                <td>01/04/2021</td>
+                <td style="color: red;"> 10 days ago</td>
+                <td><i class="far fa-clock me-1" style="color:red; "></i>Volutpat Blandit</td>                
+                <td style="text-align: right;">45.250,00 €</td>
+                <td style="text-align: right;">94.924,00 €</td>
+                <td><mark style="background-color: #0fa7a9; border-radius:10px; color: white;">Borrador</mark></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <th scope="row"><input class="form-check-input ms-3" type="checkbox" value=""></th>
+                <td>REF003</td>
+                <td></td>
+                <td>17/03/2021</td>
+                <td></td>
+                <td><i class="far fa-clock me-1" style="color:green; "></i>Volutpat Blandit</td>                
+                <td style="text-align: right;">88.323,00 €</td>
+                <td style="text-align: right;">13.689,00 €</td>
+                <td><mark style="background-color: #0fa95c; border-radius:10px; color: white;">Publicado</mark></td>
+                <td><mark style="background-color: orange; border-radius:10px; color: white;">En proceso de pago</mark></td>
+                <td></td>
+                </tr>
+                <tr>
+                <th scope="row"><input class="form-check-input ms-3" type="checkbox" value=""></th>
+                <td>REF004</td>
+                <td></td>
+                <td>13/04/2021</td>
+                <td style="color: grey;"> in 11 days</td>
+                <td><i class="far fa-clock me-1" style="color:orange; "></i>Volutpat Blandit</td>                
+                <td style="text-align: right;">754.680,00 €</td>
+                <td style="text-align: right;">33.358,00 €</td>
+                <td><mark style="background-color: #0fa7a9; border-radius:10px; color: white;">Borrador</mark></td>
+                <td><mark style="background-color: orange; border-radius:10px; color: white;">Pagado parcialmente</mark></td>
+                <td></td>
+                </tr>
+                
+            </tbody>
+            </table>
+
+
+    </div>
+
+</body>
+
+</html>

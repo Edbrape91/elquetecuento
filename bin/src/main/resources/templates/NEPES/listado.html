@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Aplicacion Proyecto BECA JAVA</title>
+</head>
+<body>
+	<h1> LISTADO DE PAISES</h1>
+	<ol>	
+	    <li th:each="p1:${listadopaises}"   th:text=" 'Pais=>'+${p1}" ></li>	
+	</ol>
+	
+
+</body>
+</html>

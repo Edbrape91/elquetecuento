@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI polla gorda</title>
+    <!-- Librerías -->
+  
+    <link rel="stylesheet" href="css\style.css">
+    </link>
+    <script src="js/login_register.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://kit.fontawesome.com/e22ea825df.js" crossorigin="anonymous"></script>
+    <!-- Librerías -->
+</head>
+
+<body>
+
+    <div class="container-fluid" id="fondo">
+
+
+        <nav class="navbar navbar-expand navbar-light">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item icononav pl-2 pr-2 pt-2" role="button"><i class="fas fa-comments fa-sm"></i>
+                    </li>
+                    <li class="nav-item icononav pl-2 pr-2 pt-2" role="button"><i class="far fa-clock fa-sm"></i></li>
+                    <li class="nav-item icononav dropdown pl-2 pr-2 pt-2" role="button" data-toggle="dropdown">
+                        <i class="fas fa-tools fa-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"><span class="ddmflecha"></span></i>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item icononav2 pt-2"><i class="fas fa-user-circle fa-2x"></i></li>
+                    <p id="logged_user" class="letrablanca pt-2"></p>
+                </ul>
+            </div>
+        </nav>
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-2">
+                <a href="./conversaciones.html">
+                    <img class="atributomodulos img-fluid mx-auto d-block" src="img/discuss.png" alt="Conversaciones">
+                </a>
+                <p class="letramodulos">Conversaciones</p>
+            </div>
+            <div class="col-2">
+                <a href="./ventas.html">
+                    <img class="atributomodulos img-fluid mx-auto d-block" src="img/sales.png" alt="Ventas">
+                </a>
+                <p class="letramodulos">Ventas</p>
+            </div>
+            <div class="col-2">
+                <a href="./facturacion.html">
+                    <img class="atributomodulos img-fluid mx-auto d-block" src="img/invoicing.png" alt="Facturación">
+                </a>
+                <p class="letramodulos">Facturación</p>
+            </div>
+            <div class="col-2">
+                <a href="./aplicaciones.html">
+                    <img class="atributomodulos img-fluid mx-auto d-block" src="img/apps.png" alt="Aplicaciones">
+                </a>
+                <p class="letramodulos">Aplicaciones</p>
+            </div>
+            <div class="col-2">
+                <a href="./ajustes.html">
+                    <img class="atributomodulos img-fluid mx-auto d-block" src="img/sett.png" alt="Ajustes">
+                </a>
+                <p class="letramodulos">Ajustes</p>
+            </div>
+        </div>
+    </div>
+    <script>
+         logged_user();
+    </script>
+</body>
+
+
+</html>
