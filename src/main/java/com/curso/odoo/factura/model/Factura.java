@@ -2,6 +2,7 @@ package com.curso.odoo.factura.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,13 +13,29 @@ public class Factura {
 
 	@Id
 	private Integer codigofactura;
+	
+	@Column
 	private Integer codigocliente;
+	
+	@Column
 	private Integer codigoactividad;
+	
+	@Column
 	private Integer codigoestado;
+	
+	@Column
 	private	Date fechafactura;
+	
+	@Column
 	private Date fechavencimiento;
+	
+	@Column
 	private	Double impuestos;
+	
+	@Column
 	private Double total;
+	
+	@Column
 	private Integer codigoestadopago;
 	
 	public Integer getCodigofactura() {

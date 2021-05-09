@@ -1,5 +1,6 @@
 package com.curso.odoo.actividades.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,6 +12,8 @@ public class Activity {
 
 	@Id
 	private Integer codigoactividad;
+	
+	@Column
 	private String nombreactividad;
 	
 	public Integer getCodigoactividad() {

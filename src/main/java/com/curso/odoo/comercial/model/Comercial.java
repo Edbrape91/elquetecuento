@@ -1,5 +1,6 @@
 package com.curso.odoo.comercial.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,8 +11,12 @@ import javax.persistence.Table;
 public class Comercial {
 
 	@Id
-    private Integer codigocomercial;     
+    private Integer codigocomercial;  
+	
+	@Column
     private String nombrecomercial;  
+	
+	@Column
     private String apellidoscomercial;
     
 	public Integer getCodigocomercial() {

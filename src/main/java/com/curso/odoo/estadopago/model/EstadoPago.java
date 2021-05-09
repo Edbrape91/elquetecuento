@@ -1,5 +1,6 @@
 package com.curso.odoo.estadopago.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,6 +12,8 @@ public class EstadoPago {
 
 	@Id
     private Integer codigoestadopago;
+	
+	@Column
     private String nombreestadopago;
     
 	public Integer getCodigoestadopago() {

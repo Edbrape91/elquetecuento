@@ -14,7 +14,7 @@ import com.curso.odoo.pais.repo.PaisRepo;
 public class PaisController {
 
 	@Autowired
-	private PaisRepo PaisRepo;
+	private PaisRepo paisRepo;
 	
 	@GetMapping("/pais")
 	public String pais(Model model) {

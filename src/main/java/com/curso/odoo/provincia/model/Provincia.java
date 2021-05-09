@@ -1,5 +1,6 @@
 package com.curso.odoo.provincia.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,7 +13,11 @@ public class Provincia {
 
 	@Id
     private Integer codigopais;
+	
+	@Column
     private Integer codigoprovincia;
+	
+	@Column
     private String nombreprovincia;
     
 	public Integer getCodigopais() {

@@ -17,7 +17,7 @@ public class ClienteController {
 
 	
 	@Autowired
-	private ClienteRepo ClienteRepo;
+	private ClienteRepo clienteRepo;
 	
 	@GetMapping("/cliente")
 	public String cliente(Model model) {

@@ -1,5 +1,6 @@
 package com.curso.odoo.pais.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,6 +12,8 @@ public class Pais {
 
 	@Id
     private Integer codigopais;
+	
+	@Column
     private String nombrepais;
     
 	public Integer getCodigopais() {

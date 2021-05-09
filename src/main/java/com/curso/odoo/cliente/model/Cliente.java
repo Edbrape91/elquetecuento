@@ -1,5 +1,6 @@
 package com.curso.odoo.cliente.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,20 +12,48 @@ public class Cliente {
 
 	@Id
     private Integer codigocliente;
+	
+	@Column
     private String nombrecliente;              
-    private String apellidoscliente;          
-    private char tipocliente;            
-    private Integer codigoprovincia; 
-    private String calle;                
-    private String calle1;                
-    private String ciudad;             
-    private Integer codigopostal;             
-    private String nif;             
-    private String telefono;            
-    private String movil;             
-    private String email;             
-    private String paginaweb;          
-    private String categorias;
+    
+	@Column
+	private String apellidoscliente;          
+    
+	@Column
+	private char tipocliente;            
+    
+	@Column
+	private Integer codigoprovincia; 
+    
+	@Column
+	private String calle;                
+    
+	@Column
+	private String calle1;                
+    
+	@Column
+	private String ciudad;             
+    
+	@Column
+	private Integer codigopostal;             
+    
+	@Column
+	private String nif;             
+    
+	@Column
+	private String telefono;            
+    
+	@Column
+	private String movil;             
+    
+	@Column
+	private String email;             
+    
+	@Column
+	private String paginaweb;          
+    
+	@Column
+	private String categorias;
     
 	public Integer getCodigocliente() {
 		return codigocliente;

@@ -2,6 +2,7 @@ package com.curso.odoo.presupuesto.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,11 +15,23 @@ public class Presupuesto {
 
 	@Id
     private Integer codigopresupuesto;
+	
+	@Column
 	private Date fechapresupuesto;
+	
+	@Column
 	private Double total;
+	
+	@Column
 	private Integer codigocliente;
+	
+	@Column
 	private Integer codigocomercial;
+	
+	@Column
 	private Integer codigoactividad;
+	
+	@Column
 	private Integer codigoestado;
 	
 	

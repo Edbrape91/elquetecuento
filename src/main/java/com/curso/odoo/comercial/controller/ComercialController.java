@@ -15,7 +15,7 @@ public class ComercialController {
 
 	
 	@Autowired
-	private ComercialRepo ComercialRepo;
+	private ComercialRepo comercialRepo;
 	
 	@GetMapping("/comercial")
 	public String comercial(Model model) {

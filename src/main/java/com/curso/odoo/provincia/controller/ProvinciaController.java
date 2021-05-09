@@ -14,7 +14,7 @@ public class ProvinciaController {
 
 	
 	@Autowired
-	private ProvinciaRepo ProvinciaRepo;
+	private ProvinciaRepo provinciaRepo;
 	
 	@GetMapping("/provincia")
 	public String provincia(Model model) {

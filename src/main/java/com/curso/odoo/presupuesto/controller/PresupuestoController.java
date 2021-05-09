@@ -14,7 +14,7 @@ public class PresupuestoController {
 
 	
 	@Autowired
-	private PresupuestoRepo PresupuestoRepo;
+	private PresupuestoRepo presupuestoRepo;
 	
 	@GetMapping("/presupuesto")
 	public String presupuesto(Model model) {

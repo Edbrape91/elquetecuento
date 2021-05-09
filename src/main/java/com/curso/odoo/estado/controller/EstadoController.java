@@ -15,7 +15,7 @@ import com.curso.odoo.estado.repo.EstadoRepo;
 public class EstadoController {
 	
 	@Autowired
-	private EstadoRepo EstadoRepo;
+	private EstadoRepo estadoRepo;
 	
 	@GetMapping("/estado")
 	public String estado(Model model) {

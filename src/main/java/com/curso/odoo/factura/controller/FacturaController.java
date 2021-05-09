@@ -15,7 +15,7 @@ import com.curso.odoo.factura.repo.FacturaRepo;
 public class FacturaController {
 
 	@Autowired
-	private FacturaRepo FacturaRepo;
+	private FacturaRepo facturaRepo;
 
 	@GetMapping("/Factura")
 	public String Factura(Model model) {

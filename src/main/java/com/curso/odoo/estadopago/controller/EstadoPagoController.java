@@ -14,7 +14,7 @@ public class EstadoPagoController {
 
 	
 	@Autowired
-	private EstadoPagoRepo EstadoPagoRepo;
+	private EstadoPagoRepo estadoPagoRepo;
 	
 	@GetMapping("/estadopago")
 	public String estadopago(Model model) {
