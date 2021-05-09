@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.curso.odoo.factura.model.Factura;
 import com.curso.odoo.factura.repo.FacturaRepo;
+import com.curso.odoo.factura.service.FacturaService;
 
 @Controller
 public class FacturaController {
 
 	@Autowired
-	private FacturaRepo facturaRepo;
+	private FacturaService facturaService;
 
 	@GetMapping("/Factura")
 	public String Factura(Model model) {

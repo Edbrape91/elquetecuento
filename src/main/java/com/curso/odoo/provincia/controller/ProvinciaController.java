@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.curso.odoo.provincia.model.Provincia;
 import com.curso.odoo.provincia.repo.ProvinciaRepo;
+import com.curso.odoo.provincia.service.ProvinciaService;
 
 @Controller
 public class ProvinciaController {
 
 	
 	@Autowired
-	private ProvinciaRepo provinciaRepo;
+	private ProvinciaService provinciaService;
 	
 	@GetMapping("/provincia")
 	public String provincia(Model model) {

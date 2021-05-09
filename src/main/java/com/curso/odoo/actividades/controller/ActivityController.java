@@ -11,18 +11,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.curso.odoo.actividades.model.Activity;
 import com.curso.odoo.actividades.repo.ActivityRepo;
+import com.curso.odoo.actividades.service.ActivityService;
 
 
 @Controller
 public class ActivityController {
+	
 	@Autowired
-	private ActivityRepo actividadRepo;
+	private ActivityService activityService;
 	
 	@GetMapping("/Actividades")
 	public String actividad(Model model) {
 		
 		//Pedir a la base de datos las actividades
-		List <Activity> actividades = actividadRepo.findAll(); 
+		List <Activity> actividades = activityService.find(); 
 	
 		//Pasarselas a la web(a traves del modelo)
 		model.addAttribute("Actividades", actividades);
@@ -39,7 +41,7 @@ public class ActivityController {
 		activity_1.setCodigoactividad(codigoactividad);
 		activity_1.setNombreactividad(nombreactividad);
 		
-		actividadRepo.save(activity_1);
+		activityService.save(activity_1);
 		
 		return "redirect:/Actividades";
 	}

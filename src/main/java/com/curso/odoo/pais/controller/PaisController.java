@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.curso.odoo.pais.model.Pais;
 import com.curso.odoo.pais.repo.PaisRepo;
+import com.curso.odoo.pais.service.PaisService;
 
 
 @Controller
 public class PaisController {
 
 	@Autowired
-	private PaisRepo paisRepo;
+	private PaisService paisService;
 	
 	@GetMapping("/pais")
 	public String pais(Model model) {

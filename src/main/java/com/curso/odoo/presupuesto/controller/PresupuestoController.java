@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.curso.odoo.presupuesto.model.Presupuesto;
 import com.curso.odoo.presupuesto.repo.PresupuestoRepo;
+import com.curso.odoo.presupuesto.service.PresupuestoService;
 
 @Controller
 public class PresupuestoController {
 
 	
 	@Autowired
-	private PresupuestoRepo presupuestoRepo;
+	private PresupuestoService presupuestoService;
 	
 	@GetMapping("/presupuesto")
 	public String presupuesto(Model model) {

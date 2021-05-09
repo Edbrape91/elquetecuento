@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.curso.odoo.estado.model.Estado;
 import com.curso.odoo.estado.repo.EstadoRepo;
+import com.curso.odoo.estado.service.EstadoService;
 
 
 
@@ -15,7 +16,7 @@ import com.curso.odoo.estado.repo.EstadoRepo;
 public class EstadoController {
 	
 	@Autowired
-	private EstadoRepo estadoRepo;
+	private EstadoService estadoService;
 	
 	@GetMapping("/estado")
 	public String estado(Model model) {

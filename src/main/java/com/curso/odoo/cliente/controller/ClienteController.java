@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.curso.odoo.cliente.model.Cliente;
 import com.curso.odoo.cliente.repo.ClienteRepo;
+import com.curso.odoo.cliente.service.ClienteService;
 
 @Controller
 public class ClienteController {
 
 	
 	@Autowired
-	private ClienteRepo clienteRepo;
+	private ClienteService clienteService;
 	
 	@GetMapping("/cliente")
 	public String cliente(Model model) {
