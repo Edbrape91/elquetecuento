@@ -18,19 +18,19 @@ public class ComercialController {
 	@Autowired
 	private ComercialService comercialService;
 	
-	@GetMapping("/comercial")
+	@GetMapping("/Comercial")
 	public String comercial(Model model) {
 		
 		
-		return null;
+		return "ProyectoS/Comercial";
 	}
 	
-	@PostMapping("/comercial")
+	@PostMapping("/Comercial")
 	public String comercialPost() {
 		
 		
 		
-		return null;
+		return "ProyectoS/Comercial";
 	}
 	
 }

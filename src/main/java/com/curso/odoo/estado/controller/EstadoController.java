@@ -18,19 +18,19 @@ public class EstadoController {
 	@Autowired
 	private EstadoService estadoService;
 	
-	@GetMapping("/estado")
+	@GetMapping("/Estado")
 	public String estado(Model model) {
 		
 		
-		return null;
+		return "ProyectoS/Estado";
 	}
 	
-	@PostMapping("/estado")
+	@PostMapping("/Estado")
 	public String estadoPost() {
 		
 		
 		
-		return null;
+		return "ProyectoS/Estado";
 	}
 	
 }

@@ -17,19 +17,19 @@ public class EstadoPagoController {
 	@Autowired
 	private EstadoPagoService estadoPagoService;
 	
-	@GetMapping("/estadopago")
+	@GetMapping("/EstadoPago")
 	public String estadopago(Model model) {
 		
 		
-		return null;
+		return "ProyectoS/EstadoPago";
 	}
 	
-	@PostMapping("/estadopago")
+	@PostMapping("/EstadoPago")
 	public String estadopagoPost() {
 		
 		
 		
-		return null;
+		return "ProyectoS/EstadoPago";
 	}
 	
 	
