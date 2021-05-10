@@ -30,7 +30,7 @@ public class ComercialController {
 		
 		
 		
-		return "ProyectoS/Comercial";
+		return "redirect:/Comercial";
 	}
 	
 }
