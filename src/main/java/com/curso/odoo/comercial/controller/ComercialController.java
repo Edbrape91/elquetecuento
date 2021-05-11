@@ -5,32 +5,38 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.curso.odoo.comercial.model.Comercial;
 import com.curso.odoo.comercial.repo.ComercialRepo;
 import com.curso.odoo.comercial.service.ComercialService;
 
-
 @Controller
 public class ComercialController {
 
-	
 	@Autowired
 	private ComercialService comercialService;
-	
+
 	@GetMapping("/Comercial")
 	public String comercial(Model model) {
-		
-		
+
 		return "ProyectoS/Comercial";
 	}
-	
+
 	@PostMapping("/Comercial")
-	public String comercialPost() {
+	public String comercialPost(@RequestParam("codigocomercial") Integer codigocomercial,
+			  @RequestParam("nombrecomercial") String nombrecomercial, 
+			  @RequestParam("apellidoscomercial") String apellidoscomercial) {
+
+		Comercial comercial_1 = new Comercial();
+
+		comercial_1.setCodigocomercial(codigocomercial);
+		comercial_1.setNombrecomercial(nombrecomercial);
+		comercial_1.setApellidoscomercial(apellidoscomercial);
 		
-		
-		
-		return "redirect:/Comercial";
+		comercialService.save(comercial_1);
+
+		return "ProyectoS/Comercial";
 	}
-	
+
 }

@@ -108,7 +108,7 @@
 
 								<thead>
 									<tr>
-										<th scope="col"><input type="checkbox" /></th>
+										<th scope="col"><input type="checkbox" /> &nbspNúmero </th>
 										<th scope="col">Codigo Actividad</th>
 										<th scope="col">Nombre Actividad</th>
 									</tr>
@@ -118,7 +118,7 @@
 
 								<tbody th:remove="all-but-first">
 									<tr th:each="activity : ${Actividades}">
-										<td scope="row"><input type="checkbox" /><label></label></td>
+										<td scope="row"><input type="checkbox" /><label>&nbspREF0001</label></td>
 										<td><span th:text="${activity.nombreactividad}"></span></td>
 										<td></td>
 									</tr>
