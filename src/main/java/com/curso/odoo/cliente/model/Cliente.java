@@ -7,38 +7,41 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table (name="cliente")
+@Table (name="clientes")
 public class Cliente {
 
 	@Id
-    private Integer codigocliente;
+    private Integer id;
 	
 	@Column
-    private String nombrecliente;              
+    private String individual;
+	
+	@Column
+    private String compañia;
     
 	@Column
-	private String apellidoscliente;          
+	private String nombre;          
     
 	@Column
-	private char tipocliente;            
+	private char direccion1;            
     
 	@Column
-	private Integer codigoprovincia; 
+	private Integer direccion2; 
     
 	@Column
-	private String calle;                
+	private String ciudad;                
     
 	@Column
-	private String calle1;                
+	private String provincia;                
     
 	@Column
-	private String ciudad;             
+	private String CP;             
     
 	@Column
-	private Integer codigopostal;             
+	private Integer pais;             
     
 	@Column
-	private String nif;             
+	private String NIF;             
     
 	@Column
 	private String telefono;            
@@ -47,103 +50,141 @@ public class Cliente {
 	private String movil;             
     
 	@Column
-	private String email;             
+	private String correo_electronico;             
     
 	@Column
-	private String paginaweb;          
+	private String enlace_Web;          
     
 	@Column
 	private String categorias;
-    
-	public Integer getCodigocliente() {
-		return codigocliente;
+
+	public Integer getId() {
+		return id;
 	}
-	public void setCodigocliente(Integer codigocliente) {
-		this.codigocliente = codigocliente;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getNombrecliente() {
-		return nombrecliente;
+
+	public String getIndividual() {
+		return individual;
 	}
-	public void setNombrecliente(String nombrecliente) {
-		this.nombrecliente = nombrecliente;
+
+	public void setIndividual(String individual) {
+		this.individual = individual;
 	}
-	public String getApellidoscliente() {
-		return apellidoscliente;
+
+	public String getCompañia() {
+		return compañia;
 	}
-	public void setApellidoscliente(String apellidoscliente) {
-		this.apellidoscliente = apellidoscliente;
+
+	public void setCompañia(String compañia) {
+		this.compañia = compañia;
 	}
-	public char getTipocliente() {
-		return tipocliente;
+
+	public String getNombre() {
+		return nombre;
 	}
-	public void setTipocliente(char tipocliente) {
-		this.tipocliente = tipocliente;
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public Integer getCodigoprovincia() {
-		return codigoprovincia;
+
+	public char getDireccion1() {
+		return direccion1;
 	}
-	public void setCodigoprovincia(Integer codigoprovincia) {
-		this.codigoprovincia = codigoprovincia;
+
+	public void setDireccion1(char direccion1) {
+		this.direccion1 = direccion1;
 	}
-	public String getCalle() {
-		return calle;
+
+	public Integer getDireccion2() {
+		return direccion2;
 	}
-	public void setCalle(String calle) {
-		this.calle = calle;
+
+	public void setDireccion2(Integer direccion2) {
+		this.direccion2 = direccion2;
 	}
-	public String getCalle1() {
-		return calle1;
-	}
-	public void setCalle1(String calle1) {
-		this.calle1 = calle1;
-	}
+
 	public String getCiudad() {
 		return ciudad;
 	}
+
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}
-	public Integer getCodigopostal() {
-		return codigopostal;
+
+	public String getProvincia() {
+		return provincia;
 	}
-	public void setCodigopostal(Integer codigopostal) {
-		this.codigopostal = codigopostal;
+
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
 	}
-	public String getNif() {
-		return nif;
+
+	public String getCP() {
+		return CP;
 	}
-	public void setNif(String nif) {
-		this.nif = nif;
+
+	public void setCP(String cP) {
+		CP = cP;
 	}
+
+	public Integer getPais() {
+		return pais;
+	}
+
+	public void setPais(Integer pais) {
+		this.pais = pais;
+	}
+
+	public String getNIF() {
+		return NIF;
+	}
+
+	public void setNIF(String nIF) {
+		NIF = nIF;
+	}
+
 	public String getTelefono() {
 		return telefono;
 	}
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
 	public String getMovil() {
 		return movil;
 	}
+
 	public void setMovil(String movil) {
 		this.movil = movil;
 	}
-	public String getEmail() {
-		return email;
+
+	public String getCorreo_electronico() {
+		return correo_electronico;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setCorreo_electronico(String correo_electronico) {
+		this.correo_electronico = correo_electronico;
 	}
-	public String getPaginaweb() {
-		return paginaweb;
+
+	public String getEnlace_Web() {
+		return enlace_Web;
 	}
-	public void setPaginaweb(String paginaweb) {
-		this.paginaweb = paginaweb;
+
+	public void setEnlace_Web(String enlace_Web) {
+		this.enlace_Web = enlace_Web;
 	}
+
 	public String getCategorias() {
 		return categorias;
 	}
+
 	public void setCategorias(String categorias) {
 		this.categorias = categorias;
-	}          
+	}
+    
 	
 }

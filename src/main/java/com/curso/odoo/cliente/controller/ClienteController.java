@@ -1,7 +1,5 @@
 package com.curso.odoo.cliente.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,8 +26,18 @@ public class ClienteController {
 	}
 	
 	@PostMapping("/cliente")
-	public String clientePost() {
+	public String clientePost(@RequestParam ("clientId") int clientId, @RequestParam ("nameOf") String nameOf) {
 		
+              Cliente cl1=new Cliente();
+              cl1.setId(clientId);
+              cl1.setNombre(nameOf);
+              
+              
+              
+              
+              
+              
+              
 		
 		
 		return null;

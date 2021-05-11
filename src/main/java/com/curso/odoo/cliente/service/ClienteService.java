@@ -11,5 +11,13 @@ public class ClienteService {
 	
 	@Autowired
 	private ClienteRepo clienteRepo;
+
+	public ClienteRepo getClienteRepo() {
+		return clienteRepo;
+	}
+
+	public void setClienteRepo(ClienteRepo clienteRepo) {
+		this.clienteRepo = clienteRepo;
+	}
 	
 }
