@@ -85,8 +85,8 @@
 		<br />
 		<div class="row pb-3" style="border-bottom: solid 2px lightgray;">
 			<div class="col-6">
-				<button type="button" class="btn btn-secondary boton1">Guardar</button>
-				<button class="btn" style="color: #138496;">Descartar</button>
+				<a type="button" class="btn btn-secondary boton1" href="/actividades">Lista</a>
+				
 			</div>
 		</div>
 
@@ -96,7 +96,7 @@
 					<div class="contenedor">
 						<div class="formulario" style="">
 							<div class="col">
-								 <div>
+								 <!--<div>
 								 <h3>
 									Actividades(<span th:text="${Actividades.size()}"></span>)
 								</h3> 
@@ -109,6 +109,7 @@
 										<th scope="col"><input type="checkbox" /></th>
 										<th scope="col">Codigo Actividad</th>
 										<th scope="col">Nombre Actividad</th>
+										<th scope="col"></th>
 									</tr>
 								</thead>
 
@@ -118,13 +119,13 @@
 									<tr th:each="activity : ${Actividades}">
 										<td scope="row"><input type="checkbox" /><label th:text=${activity.codigoactividad}></label></td>
 										<td><span th:text="${activity.nombreactividad}"></span></td>
-										<td></td>
+										<td><a th:href="@{/actividad_borrar(idActivity=${activity.codigoactividad})}" class="btn boton1 ">Borrar</a></td>
 									</tr>
 								</tbody> 
 								</table>
-								</div>
+								</div>-->
 								<br>
-								<form id="formulario" action="/Actividades" method="post">
+								<form id="formulario" action="/actividad" method="post">
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="inputEmail4"> <strong>Codigo
@@ -145,7 +146,7 @@
 										<br> <br>
 									</div>
 									<button type="submit" class="btn btn-primary btn_verde">Añadir</button>
-									<button onclick="borrar()" class="btn btn-primary btn_verde">Borrar</button>
+									
 								</form>
 								</div>
 								</div>
@@ -154,7 +155,7 @@
 						</div>
 					</div>
 				</div>
-				<script type="text/javascript">
+				<!--<script type="text/javascript">
 				   function borrar()
 				   {
 						var  v1=document.getElemntByTagname("input")
@@ -164,7 +165,7 @@
 })				
 					}
 				
-				</script>
+				</script>-->
 </body>
 
 </html>

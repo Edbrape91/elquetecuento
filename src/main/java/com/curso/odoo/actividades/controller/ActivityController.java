@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.curso.odoo.actividades.model.Activity;
-import com.curso.odoo.actividades.repo.ActivityRepo;
 import com.curso.odoo.actividades.service.ActivityService;
 
 
@@ -20,18 +19,26 @@ public class ActivityController {
 	@Autowired
 	private ActivityService activityService;
 	
-	@GetMapping("/Actividades")
-	public String actividad(Model model) {
+	
+
+	@GetMapping("/actividades")
+	public String actividadesList(Model model) {
 		
 		//Pedir a la base de datos las actividades
 		List <Activity> actividades = activityService.find(); 
 	
 		//Pasarselas a la web(a traves del modelo)
 		model.addAttribute("Actividades", actividades);
+		return "ProyectoS/ActividadesListadas";
+	}
+	
+	@GetMapping("/actividad")
+	public String actividadForm(Model model){
+	
 		return "ProyectoS/Actividades";
 	}
 	
-	@PostMapping("/Actividades")
+	@PostMapping("/actividad")
 	public String actividadPost(@RequestParam("codigoactividad") Integer codigoactividad,
 						  @RequestParam("nombreactividad") String nombreactividad) {
 		
@@ -43,7 +50,16 @@ public class ActivityController {
 		
 		activityService.save(activity_1);
 		
-		return "redirect:/Actividades";
+		return "redirect:/actividad";
 	}
+
+	@GetMapping("/actividad_borrar")
+	public String actividadBorra(@RequestParam Integer idActivity, Model model) {
+		
+		activityService.delete(idActivity);
+		
+		return "redirect:/actividades";
+	}
+	
 
 }

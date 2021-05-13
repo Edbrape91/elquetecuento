@@ -39,12 +39,7 @@ public class HomeController {
 		return "ProyectoS/conversaciones";
 	}
 
-	@GetMapping("/facturas")
-	public String facturas() {
-
-		return "ProyectoS/facturas";
-	}
-
+	
 	@GetMapping("/login")
 	public String login() {
 
@@ -173,16 +168,6 @@ public class HomeController {
 
 	}
 
-	@GetMapping("/FormFacturas")
-	public String FormularioFacturas() {
-
-		return "ProyectoS/FormFacturas";
-
-	}
-	
-	
-	
-	
 	
 	
 }

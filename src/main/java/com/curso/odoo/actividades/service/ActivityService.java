@@ -22,5 +22,8 @@ public class ActivityService {
 		actividadRepo.save(activity);
 	}
 	
+	public void delete(Integer idActivity) {
+		actividadRepo.deleteById(idActivity);
+	}
 
 }
