@@ -22,4 +22,9 @@ public class ComercialService {
 		comercialRepo.save(comercial);
 	}
 
+	public void delete(Integer idComercial) {
+		comercialRepo.deleteById(idComercial);
+	}
+
+	
 }

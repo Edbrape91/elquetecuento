@@ -36,7 +36,17 @@ public class ComercialController {
 		
 		comercialService.save(comercial_1);
 
-		return "ProyectoS/Comercial";
+		return "redirect:/Comercial";
 	}
 
+	@GetMapping("/comercial_borrar")
+	public String comercialBorra(@RequestParam Integer idComercial, Model model) {
+		
+		comercialService.delete(idComercial);
+		
+		return "redirect:/Comercial";
+	}
+	
+	
+	
 }

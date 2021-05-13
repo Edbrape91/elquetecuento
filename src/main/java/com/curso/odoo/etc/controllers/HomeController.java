@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.curso.odoo.etc.modelos.RegisterRequest;
 import com.curso.odoo.etc.modelos.Venta;
 
 @Controller
@@ -33,18 +32,7 @@ public class HomeController {
 		return "ProyectoS/aplicaciones";
 	}
 
-	@GetMapping("/clientes_new")
-	public String clientes_new() {
-
-		return "ProyectoS/clientes_new";
-	}
-
-	@GetMapping("/clientes")
-	public String clientes() {
-
-		return "ProyectoS/clientes";
-	}
-
+		
 	@GetMapping("/conversaciones")
 	public String conversaciones() {
 

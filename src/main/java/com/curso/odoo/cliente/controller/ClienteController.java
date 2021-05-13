@@ -1,5 +1,7 @@
 package com.curso.odoo.cliente.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,39 +10,82 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.curso.odoo.cliente.model.Cliente;
-import com.curso.odoo.cliente.repo.ClienteRepo;
 import com.curso.odoo.cliente.service.ClienteService;
 
 @Controller
 public class ClienteController {
 
-	
 	@Autowired
-	private ClienteService clienteService;
+	private ClienteService clientesService;
 	
 	@GetMapping("/cliente")
-	public String cliente(Model model) {
+	public String listClientes(Model model) {
+		
+		//Pedir a la base de datos los clientes
+				List<Cliente> clients = clientesService.find(); 
+			
+				//Pasarselas a la web(a traves del modelo)
+				model.addAttribute("clientes", clients);
+				
+		
+		return "ProyectoS/cliente";
+	}
+
+	@GetMapping("/clientes_new")
+	public String clienteForm(Model model) {
 		
 		
-		return null;
+		return "ProyectoS/clientes_new";
+	}
+
+	@PostMapping("/clientes_new")
+	public String clientePost(@RequestParam("nombreacliente") String nombrecliente, 
+			@RequestParam("apellidoscliente") String apellidoscliente, 
+			@RequestParam("indiOComp") char tipocliente,
+			@RequestParam("direction1") String calle, 
+			@RequestParam("direction2") String calle1,
+			@RequestParam("ciudad") String ciudad, 
+			@RequestParam("provincia") Integer codigoprovincia,
+			@RequestParam("codigoPostal") Integer codigopostal,
+			@RequestParam("nif") String nif, 
+			@RequestParam("telefono") String telefono,
+			@RequestParam("movil") String movil,
+			@RequestParam("email") String email,
+			@RequestParam("paginaweb") String paginaweb, 
+			@RequestParam("categorias") String categorias){
+		
+		Cliente cliente_1 = new Cliente();
+		
+		
+		cliente_1.setNombrecliente(nombrecliente);
+		cliente_1.setApellidoscliente(apellidoscliente);
+		cliente_1.setTipocliente(tipocliente);
+		cliente_1.setCodigoprovincia(codigoprovincia);
+		cliente_1.setCalle(calle1);
+		cliente_1.setCalle1(calle1);
+		cliente_1.setCiudad(ciudad);
+		cliente_1.setCodigopostal(codigopostal);
+		cliente_1.setNif(nif);
+		cliente_1.setTelefono(telefono);
+		cliente_1.setMovil(movil);
+		cliente_1.setEmail(email);
+		cliente_1.setPaginaweb(paginaweb);
+		cliente_1.setCategorias(categorias);
+		
+		
+		clientesService.save(cliente_1);
+	
+		
+		return "redirect:/cliente";
 	}
 	
-	@PostMapping("/cliente")
-	public String clientePost(@RequestParam ("clientId") int clientId, @RequestParam ("nameOf") String nameOf) {
+	@GetMapping("/cliente_borrar")
+	public String clienteBorra(@RequestParam Integer idCliente, Model model) {
 		
-              Cliente cl1=new Cliente();
-              cl1.setId(clientId);
-              cl1.setNombre(nameOf);
-              
-              
-              
-              
-              
-              
-              
+		clientesService.delete(idCliente);
 		
-		
-		return null;
+		return "redirect:/cliente";
 	}
+	
 	
 }

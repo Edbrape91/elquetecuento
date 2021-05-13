@@ -1,112 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cliente</title>
-    <link rel="stylesheet" href="css\bootstrap.min.css" />
-    <link rel="stylesheet" href="css\estilo.css">
-    </link>
-    <script src="js\jquery-3.6.0.min.js"></script>
-    <script src="js\bootstrap.min.js"></script>
-    <script src="js\popper.js"></script>
-    <script src="https://kit.fontawesome.com/e22ea825df.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cliente</title>
+<link rel="stylesheet" href="css\bootstrap.min.css" />
+<link rel="stylesheet" href="css\estilo.css">
+<link rel="stylesheet" href="css\registro.css">
+<script src="js\jquery-3.6.0.min.js"></script>
+<script src="js\bootstrap.min.js"></script>
+<script src="js\popper.js"></script>
+<script src="https://kit.fontawesome.com/e22ea825df.js"	crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-    <div class="container-fluid px-0">
-        <nav class="navbar navbar-expand-lg navbar-dark menus">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/index"><i class="fas fa-th icononav"></i></a>
-                <a class="navbar-brand" href="/index" style="font-weight: bold;">Ventas</a>
-                <div class="collapse navbar-collapse ps-3" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item menuder"><a href="#" class="nav-link">Pedidos</a></li>
-                        <li class="nav-item menuder"><a href="#" class="nav-link ">A facturar</a></li>
-                        <li class="nav-item menuder"><a href="#" class="nav-link">Productos</a></li>
-                        <li class="nav-item menuder"><a href="#" class="nav-link">Informes</a></li>
-                        <li class="nav-item menuder"><a href="#" class="nav-link">Configuración</a></li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-comments"></i>
-                                <span class="badge badge-pill badge-info"
-                                    style="background-color: #138496; font-size: 9px; border-radius: 0.40rem; position: absolute;">1</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="far fa-clock"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown pt-2 ">
-                            <a class="nav-item dropdown-toggle icono" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-tools"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Opcion 1</a></li>
-                                <li><a class="dropdown-item" href="#">Opcion 2</a></li>
-                                <li><a class="dropdown-item" href="#">Opcion 3</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-user-circle nav-item"></i>Apasoft</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+	<div class="container-fluid px-0">
+		<nav class="navbar navbar-expand-lg navbar-dark menus">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/index"><i
+					class="fas fa-th icononav"></i></a> <a class="navbar-brand"
+					href="/index" style="font-weight: bold;">Ventas</a>
+				<div class="collapse navbar-collapse ps-3"
+					id="navbarSupportedContent">
+					<ul class="navbar-nav">
+						<li class="nav-item menuder"><a href="#" class="nav-link">Pedidos</a></li>
+						<li class="nav-item menuder"><a href="#" class="nav-link ">A facturar</a></li>
+						<li class="nav-item menuder"><a href="#" class="nav-link">Productos</a></li>
+						<li class="nav-item menuder"><a href="#" class="nav-link">Informes</a></li>
+						<li class="nav-item menuder"><a href="#" class="nav-link">Configuración</a></li>
+					</ul>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link" href="#"> <i
+								class="fas fa-comments"></i> <span
+								class="badge badge-pill badge-info"
+								style="background-color: #138496; font-size: 9px; border-radius: 0.40rem; position: absolute;">1</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link" href="#"> <i
+								class="far fa-clock"></i>
+						</a></li>
+						<li class="nav-item dropdown pt-2 "><a
+							class="nav-item dropdown-toggle icono" href="#"
+							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false"><i class="fas fa-tools"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="#">Opcion 1</a></li>
+								<li><a class="dropdown-item" href="#">Opcion 2</a></li>
+								<li><a class="dropdown-item" href="#">Opcion 3</a></li>
+							</ul></li>
+						<li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-circle nav-item"></i>Apasoft</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 
 
 
-    <div class="container-fluid">
+	<div class="container-fluid">
 
-        <div class="row pt-3">
-            <div class="col-6">
-                <span class="titulopagina">Cliente</span>
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control busqueda" placeholder="Buscar...">
-                    <i class="fa fa-search" style="color: #ccc; padding-top: 10px; padding-right: 20px"></i>
-                </div>
-            </div>
+		<div class="row pt-3">
+			<div class="col-6">
+				<span class="titulopagina">Cliente</span>
+			</div>
+			<div class="col-6">
+				<div class="input-group mb-3">
+					<input type="text" class="form-control busqueda"
+						placeholder="Buscar..."> <i class="fa fa-search"
+						style="color: #ccc; padding-top: 10px; padding-right: 20px"></i>
+				</div>
+			</div>
 
-        </div>
+		</div>
 
-        <div class="row pb-3" style="border-bottom: solid 2px lightgray;">
-            <div class="col-6">
-                <a class="btn btn-secondary boton1" href="/clientes_new">Crear</a>
-            </div>
-            <div class="col-3">
-                <button class="btn"><i class="fas fa-filter botonesform"><span class="botonesform ms-1"> <strong>
-                                Filtros</strong></span></i></button>
-                <button class="btn"><i class="fas fa-bars botonesform"><span class="botonesform ms-1"> <strong> Agrupar
-                                por</strong></span></i></button>
-                <button class="btn"><i class="fas fa-star botonesform"><span class="botonesform ms-1"> <strong>
-                                Favoritos</strong></span></i></button>
-            </div>
-            <div class="col-3 text-end">
-                <button class="btn"><i class="fas fa-list botonesform"></i></button>
-                <button class="btn"><i class="fas fa-th-large botonesform"></i></button>
-            </div>
-        </div>
+		<div class="row pb-3" style="border-bottom: solid 2px lightgray;">
+			<div class="col-6">
+				<a class="btn btn-secondary boton1" href="/clientes_new">Crear</a>
+			</div>
+			<div class="col-3">
+				<button class="btn">
+					<i class="fas fa-filter botonesform"><span
+						class="botonesform ms-1"> <strong> Filtros</strong></span></i>
+				</button>
+				<button class="btn">
+					<i class="fas fa-bars botonesform"><span
+						class="botonesform ms-1"> <strong> Agrupar por</strong></span></i>
+				</button>
+				<button class="btn">
+					<i class="fas fa-star botonesform"><span
+						class="botonesform ms-1"> <strong> Favoritos</strong></span></i>
+				</button>
+			</div>
+			<div class="col-3 text-end">
+				<button class="btn">
+					<i class="fas fa-list botonesform"></i>
+				</button>
+				<button class="btn">
+					<i class="fas fa-th-large botonesform"></i>
+				</button>
+			</div>
+		</div>
 
-        <div class="row">
-            <table class="table tablita">
+		<div class="row">
+			<div>
+				<h3>
+					Clientes(<span th:text="${clientes.size()}"></span>)
+				</h3>
+				<table>
 
 
-            </table>
+
+					<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" /></th>
+							<th scope="col">Código Cliente</th>
+							<th scope="col">Nombre Cliente</th>
+							<th scope="col">Apellidos Cliente</th>
+							<th scope="col">Tipo Cliente</th>
+							<th scope="col">Código provincia</th>
+							<th scope="col">Calle</th>
+							<th scope="col">Calle1</th>
+							<th scope="col">Ciudad</th>
+							<th scope="col">Código Postal</th>
+							<th scope="col">NIF</th>
+							<th scope="col">Teléfono</th>
+							<th scope="col">Móvil</th>
+							<th scope="col">Email</th>
+							<th scope="col">Página Web</th>
+							<th scope="col">Categorías</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
 
 
-        </div>
+
+					<tbody th:remove="all-but-first">
+						<tr th:each="cliente : ${clientes}">
+							<td scope="row"><input type="checkbox" name="check"/></td>
+							<td><span th:text=${cliente.codigocliente}></span></td>
+							<td><span th:text=${cliente.nombrecliente}></span></td>
+							<td><span th:text=${cliente.apellidoscliente}></span></td>
+							<td><span th:text=${cliente.tipocliente}></span></td>
+							<td><span th:text=${cliente.codigoprovincia}></span></td>
+							<td><span th:text=${cliente.calle}></span></td>
+							<td><span th:text=${cliente.calle1}></span></td>
+							<td><span th:text=${cliente.ciudad}></span></td>
+							<td><span th:text=${cliente.codigopostal}></span></td>
+							<td><span th:text=${cliente.nif}></span></td>
+							<td><span th:text=${cliente.telefono}></span></td>
+							<td><span th:text=${cliente.movil}></span></td>
+							<td><span th:text=${cliente.email}></span></td>
+							<td><span th:text=${cliente.paginaweb}></span></td>
+							<td><span th:text=${cliente.categorias}></span></td>
+							<td><a th:href="@{/cliente_borrar(idCliente=${cliente.codigocliente})}" class="btn boton1 ">Borrar</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 
 </body>
 

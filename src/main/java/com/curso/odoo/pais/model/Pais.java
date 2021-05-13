@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table (name="pais")
+@Table(name="pais")
 public class Pais {
 
 	@Id
