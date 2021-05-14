@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.curso.odoo.actividades.model.Activity;
 import com.curso.odoo.factura.model.Factura;
-import com.curso.odoo.factura.repo.FacturaRepo;
 import com.curso.odoo.factura.service.FacturaService;
 
 @Controller
@@ -70,6 +68,12 @@ Factura factura_1 = new Factura();
 		return "redirect:/factura";
 	}
 
-	
+	@GetMapping("/factura_borrar")
+	public String facturaBorra(@RequestParam Integer idFactura, Model model) {
+		
+		facturaService.delete(idFactura);
+		
+		return "redirect:/facturas";
+	}
 	
 }

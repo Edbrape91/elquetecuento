@@ -52,66 +52,6 @@ public class HomeController {
 		return "ProyectoS/registro";
 	}
 
-	@GetMapping("/ventas_clientes")
-	public String ventas_clientes() {
-
-		return "ProyectoS/ventas_clientes";
-	}
-
-	@GetMapping("/ventas")
-	public String ventas(Model modelo) {
-		List<Venta> venta = new LinkedList<Venta>();
-
-		Venta venta_1 = new Venta();
-
-		venta_1.setCodigoPresupuesto(1);
-		venta_1.setFechaPresupuesto("Valencia");
-		venta_1.setCodigoCliente(1);
-		venta_1.setCodigoComercial(1);
-		venta_1.setActividad("Swipping");
-		venta_1.setCodigoEstado(1);
-		venta_1.setTotal(1);
-		venta.add(venta_1);
-
-		venta_1 = new Venta();
-
-		venta_1.setCodigoPresupuesto(1);
-		venta_1.setFechaPresupuesto("12/3/21");
-		venta_1.setCodigoCliente(1);
-		venta_1.setCodigoComercial(1);
-		venta_1.setActividad("Petting");
-		venta_1.setCodigoEstado(1);
-		venta_1.setTotal(1);
-		venta.add(venta_1);
-
-		venta_1 = new Venta();
-
-		venta_1.setCodigoPresupuesto(1);
-		venta_1.setFechaPresupuesto("Valencia");
-		venta_1.setCodigoCliente(1);
-		venta_1.setCodigoComercial(1);
-		venta_1.setActividad("Yoga");
-		venta_1.setCodigoEstado(1);
-		venta_1.setTotal(1);
-		venta.add(venta_1);
-
-		venta_1 = new Venta();
-
-		venta_1.setCodigoPresupuesto(1);
-		venta_1.setFechaPresupuesto("Valencia");
-		venta_1.setCodigoCliente(1);
-		venta_1.setCodigoComercial(1);
-		venta_1.setActividad("Eat");
-		venta_1.setCodigoEstado(1);
-		venta_1.setTotal(1);
-		venta.add(venta_1);
-
-		venta_1 = new Venta();
-
-		modelo.addAttribute("ventas", venta);
-
-		return "ProyectoS/ventas";
-	}
 
 	@GetMapping("/index")
 	public String index() {

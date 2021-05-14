@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comercial</title>
+<title>Presupuesto</title>
 <link rel="stylesheet" href="css\bootstrap.min.css" />
 <link rel="stylesheet" href="css\estilo.css">
-
 <script src="js\jquery-3.6.0.min.js"></script>
 <script src="js\bootstrap.min.js"></script>
 <script src="js\popper.js"></script>
@@ -18,14 +17,12 @@
 </head>
 
 <body>
-
 	<div class="container-fluid px-0">
 		<nav class="navbar navbar-expand-lg navbar-dark menus">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/index"><i
 					class="fas fa-th icononav"></i></a> <a class="navbar-brand"
-					href="/comercial_new" style="font-weight: bold;">Nuevo
-					comercial</a>
+					href="/index" style="font-weight: bold;">Actividad Nueva</a>
 				<div class="collapse navbar-collapse ps-3"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav">
@@ -37,7 +34,7 @@
 								<li><a class="dropdown-item" href="#">Presupuestos</a></li>
 								<li><a class="dropdown-item" href="#">Pedidos</a></li>
 								<li><a class="dropdown-item" href="#">Equipos de ventas</a></li>
-								<li><a class="dropdown-item" href="/clientes">clientes</a></li>
+								<li><a class="dropdown-item" href="#">clientes</a></li>
 							</ul></li>
 
 						<li class="nav-item menuder"><a href="#" class="nav-link">A
@@ -75,73 +72,97 @@
 	</div>
 
 
-	<form id="formulario" action="/comercial" method="post">
-		<div class="container-fluid">
 
-			<div class="row pt-3">
-				<div class="col-6">
-					<span class="titulopagina"><span style="color: #138496">Comercial</span>/
-						New</span>
-				</div>
+	<div class="container-fluid">
 
-			</div>
-			<br />
-			<div class="row pb-3" style="border-bottom: solid 2px lightgray;">
-				<div class="col-6">
-					<a type="button" class="btn btn-secondary boton1"
-						href="/comerciales">Lista</a>
-				</div>
+		<div class="row pt-3">
+			<div class="col-6">
+				<span class="titulopagina"><span style="color: #138496">Presupuesto</span>/
+					New</span>
 			</div>
 
-			<div class="row justify-content-center"
-				style="background-color: #f1f1f1;">
-				<div class="col-11 mt-3 mb-3"
-					style="background-color: white; border: solid 2px lightgray;">
-					<div class="principal">
-						<div class="contenedor">
-							<div class="formulario" style="">
-								<div class="col">
+		</div>
+		<br />
+		<div class="row pb-3" style="border-bottom: solid 2px lightgray;">
+			<div class="col-6">
+				<a type="button" class="btn btn-secondary boton1"
+					href="/presupuestos">Lista</a>
 
+			</div>
+		</div>
+
+		<div class="row justify-content-center"
+			style="background-color: #f1f1f1;">
+			<div class="col-11 mt-3 mb-3"
+				style="background-color: white; border: solid 2px lightgray;">
+				<div class="principal">
+					<div class="contenedor">
+						<div class="formulario" style="">
+							<div class="col">
+								<br>
+								<form id="formulario" action="/presupuesto" method="post">
 									<div class="form-row">
 										<div class="form-group col-md-6">
-											<label for="inputEmail4"> <strong>Codigo
-													Comercial</strong></label> <input type="text" class="form-control"
-												id="CodCom" name="codigocomercial" required> <small
-												id="emailHelp" class="form-text text-muted"> <em>
-													Escriba el codigo de su Comercial.</em>
+											<label for="inputDatep"> <strong>Fecha
+													presupuesto</strong></label> <input type="text" class="form-control"
+												id="presDat" name="fechaPresupuesto" required> <small
+												id="presHelp" class="form-text text-muted"> <em>Escriba
+													la fecha del presupuesto.</em>
 											</small>
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputEmail4"> <strong>Nombre
-													Comercial</strong></label> <input type="text" class="form-control"
-												id="NomCom" name="nombrecomercial" required> <small
-												id="emailHelp" class="form-text text-muted"></small><em>
-												Escriba el nombre de su comercial.</em>
+											<label for="inputUsuario"> <strong>Total</strong></label> 
+											<input type="number" class="form-control"
+												id="total" name="total" required> <small
+												id="totalHelp" class="form-text text-muted"> <em>
+													Escriba el Total del presupuesto.</em></small>
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputEmail4"> <strong>Apellidos
-													Comercial</strong></label> <input type="text" class="form-control"
-												id="ApellCom" name="apellidoscomercial" required> <small
-												id="emailHelp" class="form-text text-muted"></small> <em>Escriba
-												los apellidos de su comercial.</em>
-
+											<label for="inputUsuario"> <strong>Codigo de Cliente</strong></label> 
+											<input type="number" class="form-control"
+												id="codClient" name="codigocliente" required> <small
+												id="clientHelp" class="form-text text-muted"> <em>
+													Escriba el codigo del cliente.</em></small>
 										</div>
-
-
+										<br>
+										<div class="form-group col-md-6">
+											<label for="inputUsuario"> <strong>Codigo de Comercial</strong></label> 
+											<input type="number" class="form-control"
+												id="codComercial" name="codigocomercial" required> <small
+												id="comerHelp" class="form-text text-muted"> <em>
+													Escriba el codigo del comercial.</em></small>
+										</div>
+										<br>
+										<div class="form-group col-md-6">
+											<label for="inputUsuario"> <strong>Codigo de actividad</strong></label> 
+											<input type="number" class="form-control"
+												id="codAct" name="codigoactividad" required> <small
+												id="comerHelp" class="form-text text-muted"> <em>
+													Escriba el codigo de la actividad.</em></small>
+										</div>
+										<br>
+										<div class="form-group col-md-6">
+											<label for="inputUsuario"> <strong>Codigo de estado</strong></label> 
+											<input type="number" class="form-control"
+												id="codEst" name="codigoestado" required> <small
+												id="comerHelp" class="form-text text-muted"> <em>
+													Escriba el codigo de estado.</em></small>
+										</div>
+										<br>
 									</div>
-									<br> <br>
-								</div>
-								<button type="submit" class="btn btn-primary btn_verde">Añadir</button>
+									<button type="submit" class="btn btn-primary btn_verde">Añadir</button>
 
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</form>
+	</div>
+
 </body>
 
 </html>
