@@ -161,3 +161,13 @@
     line-height: 20px;
     font-weight: 700;
 }
+@media screen and (max-width: 699px) {
+	.iconos {
+		display: unset !important;
+	}
+}
+@media (max-width: 991px)
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto !important;
+}

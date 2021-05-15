@@ -22,27 +22,20 @@
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/index"><i
 					class="fas fa-th icononav"></i></a> <a class="navbar-brand"
-					href="/index" style="font-weight: bold;">Actividad Nueva</a>
+					href="/index" style="font-weight: bold;">Nuevo Presupuesto</a>
 				<div class="collapse navbar-collapse ps-3"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown pt-1 botonnav"><a
 							class="nav-item dropdown-toggle botonnav" href="#"
 							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false">Pedidos</a>
+							aria-expanded="false">Presupuestos</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Presupuestos</a></li>
-								<li><a class="dropdown-item" href="#">Pedidos</a></li>
-								<li><a class="dropdown-item" href="#">Equipos de ventas</a></li>
-								<li><a class="dropdown-item" href="#">clientes</a></li>
+								<li><a class="dropdown-item" href="/presupuestos">Presupuestos</a></li>
+								<li><a class="dropdown-item" href="/facturas">Facturas</a></li>
+								<li><a class="dropdown-item" href="/comerciales">Comerciales</a></li>
+								<li><a class="dropdown-item" href="/cliente">Clientes</a></li>
 							</ul></li>
-
-						<li class="nav-item menuder"><a href="#" class="nav-link">A
-								facturar</a></li>
-						<li class="nav-item menuder"><a href="#" class="nav-link ">Productos</a></li>
-						<li class="nav-item menuder"><a href="#" class="nav-link">Informes</a></li>
-						<li class="nav-item menuder"><a href="#" class="nav-link">Configuración</a></li>
-					</ul>
 				</div>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -92,9 +85,9 @@
 		</div>
 
 		<div class="row justify-content-center"
-			style="background-color: #f1f1f1;">
+			style="background-color: #41464b;">
 			<div class="col-11 mt-3 mb-3"
-				style="background-color: white; border: solid 2px lightgray;">
+				style="background-color: white; border: solid 2px #f9fafb; border-radius: 10px;">
 				<div class="principal">
 					<div class="contenedor">
 						<div class="formulario" style="">
@@ -120,40 +113,41 @@
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Codigo de Cliente</strong></label> 
+											<label for="inputUsuario"> <strong>Código de Cliente</strong></label> 
 											<input type="number" class="form-control"
 												id="codClient" name="codigocliente" required> <small
 												id="clientHelp" class="form-text text-muted"> <em>
-													Escriba el codigo del cliente.</em></small>
+													Escriba el código del cliente.</em></small>
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Codigo de Comercial</strong></label> 
+											<label for="inputUsuario"> <strong>Código de Comercial</strong></label> 
 											<input type="number" class="form-control"
 												id="codComercial" name="codigocomercial" required> <small
 												id="comerHelp" class="form-text text-muted"> <em>
-													Escriba el codigo del comercial.</em></small>
+													Escriba el código del comercial.</em></small>
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Codigo de actividad</strong></label> 
+											<label for="inputUsuario"> <strong>Código de actividad</strong></label> 
 											<input type="number" class="form-control"
 												id="codAct" name="codigoactividad" required> <small
 												id="comerHelp" class="form-text text-muted"> <em>
-													Escriba el codigo de la actividad.</em></small>
+													Escriba el código de la actividad.</em></small>
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Codigo de estado</strong></label> 
+											<label for="inputUsuario"> <strong>Código de estado</strong></label> 
 											<input type="number" class="form-control"
 												id="codEst" name="codigoestado" required> <small
 												id="comerHelp" class="form-text text-muted"> <em>
-													Escriba el codigo de estado.</em></small>
+													Escriba el código de estado.</em></small>
 										</div>
 										<br>
 									</div>
-									<button type="submit" class="btn btn-primary btn_verde">Añadir</button>
-
+									<button type="submit" class="btn btn-secondary boton1">Añadir</button>
+									<br>
+									<br>
 								</form>
 							</div>
 						</div>
