@@ -20,8 +20,9 @@
 	<div class="container-fluid px-0">
 		<nav class="navbar navbar-expand-lg navbar-dark menus">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="/index"><i
-					class="fas fa-th icononav"></i></a> <a class="navbar-brand"
+				<a class="navbar-brand" href="/index"><img
+					src="./img/logoPagina.png" class="align-self-start mr-3"
+					height="50px" width="50px"></a> <a class="navbar-brand"
 					href="/index" style="font-weight: bold;">Actividad Nueva</a>
 				<div class="collapse navbar-collapse ps-3"
 					id="navbarSupportedContent">
@@ -29,42 +30,33 @@
 						<li class="nav-item dropdown pt-1 botonnav"><a
 							class="nav-item dropdown-toggle botonnav" href="#"
 							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false">Pedidos</a>
+							aria-expanded="false">Actividades</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Presupuestos</a></li>
-								<li><a class="dropdown-item" href="#">Pedidos</a></li>
-								<li><a class="dropdown-item" href="#">Equipos de ventas</a></li>
-								<li><a class="dropdown-item" href="#">clientes</a></li>
+								<li><a class="dropdown-item" href="/actividades">Actividades</a></li>
+								<li><a class="dropdown-item" href="/facturas">Facturas</a></li>
+								<li><a class="dropdown-item" href="/comerciales">Comerciales</a></li>
+								<li><a class="dropdown-item" href="/cliente">Clientes</a></li>
+								<li><a class="dropdown-item" href="/presupuestos">Presupuestos</a></li>
 							</ul></li>
 
-						<li class="nav-item menuder"><a href="#" class="nav-link">A
-								facturar</a></li>
-						<li class="nav-item menuder"><a href="#" class="nav-link ">Productos</a></li>
-						<li class="nav-item menuder"><a href="#" class="nav-link">Informes</a></li>
-						<li class="nav-item menuder"><a href="#" class="nav-link">Configuración</a></li>
 					</ul>
 				</div>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link" href="#"> <i
-								class="fas fa-comments"></i> <span
+						<li class="nav-item"><a class="nav-link" href="/conversaciones"> <i
+								class="fas fa-comments" aria-hidden="true"></i> <span
 								class="badge badge-pill badge-info"
 								style="background-color: #138496; font-size: 9px; border-radius: 0.40rem; position: absolute;">1</span>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="#"> <i
-								class="far fa-clock"></i>
+								class="far fa-clock" aria-hidden="true"></i>
 						</a></li>
-						<li class="nav-item dropdown pt-2 "><a
-							class="nav-item dropdown-toggle icono" href="#"
-							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false"><i class="fas fa-tools"></i></a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Opcion 1</a></li>
-								<li><a class="dropdown-item" href="#">Opcion 2</a></li>
-								<li><a class="dropdown-item" href="#">Opcion 3</a></li>
-							</ul></li>
+						<li class="nav-item pt-2 "><a
+							class="nav-item icono" href="/ajustes"
+							id="navbarSettings" role="button"><i class="fas fa-tools"></i></a>
+							
 						<li class="nav-item"><a class="nav-link" href="#"><i
-								class="fas fa-user-circle nav-item"></i>Elquetecuento</a></li>
+								class="fas fa-user-circle nav-item" aria-hidden="true"></i>Elquetecuento</a></li>
 					</ul>
 				</div>
 			</div>
@@ -82,16 +74,19 @@
 			</div>
 
 		</div>
-		<br />
+		<br>
 		<div class="row pb-3" style="border-bottom: solid 2px lightgray;">
 			<div class="col-6">
-				<a type="button" class="btn btn-secondary boton1" href="/actividades">Lista</a>
-				
+				<a type="button" class="btn btn-secondary boton1"
+					href="/actividades">Lista</a>
+
 			</div>
 		</div>
 
-		<div class="row justify-content-center" style="background-color: #f1f1f1;">
-			<div class="col-11 mt-3 mb-3" style="background-color: white; border: solid 2px lightgray;">
+		<div class="row justify-content-center"
+			style="background-color: #41464b;">
+			<div class=" mt-3 mb-3"
+				style="background-color: white; border: solid 2px #f8f9fa; border-radius: 10px; width: 40%;">
 				<div class="principal">
 					<div class="contenedor">
 						<div class="formulario" style="">
@@ -99,35 +94,38 @@
 								<br>
 								<form id="formulario" action="/actividad" method="post">
 									<div class="form-row">
-										<div class="form-group col-md-6">
-											<label for="inputEmail4"> <strong>Codigo
+										<div class="form-group">
+											<label for="inputEmail4"> <strong>Código
 													Actividad</strong></label> <input type="text" class="form-control"
 												id="CodAct" name="codigoactividad" required> <small
 												id="emailHelp" class="form-text text-muted"> <em>
-													Escriba el codigo de su Actividad.</em>
+													Escriba el código de su Actividad.</em>
 											</small>
 										</div>
 										<br>
-										<div class="form-group col-md-6">
+										<div class="form-group">
 											<label for="inputUsuario"> <strong>Nombre
 													Actividad</strong></label> <input type="text" class="form-control"
 												id="NomAct" name="nombreactividad" required> <small
 												id="UsuarioHelp" class="form-text text-muted"> <em>
 													Escriba el nombre de su Actividad.</em></small>
 										</div>
-										<br> <br>
+										<br>
 									</div>
-									<button type="submit" class="btn btn-primary btn_verde">Añadir</button>
-									
+									<button type="submit" class="btn btn-secondary boton1">Añadir</button>
+									<br> <br>
+
 								</form>
-								</div>
-								</div>
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				
+			</div>
+		</div>
+	</div>
+
+
+
 </body>
 
 </html>
