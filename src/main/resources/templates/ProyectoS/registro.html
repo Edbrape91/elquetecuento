@@ -30,20 +30,20 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4"> <strong>Email</strong></label>
-                <input type="email" class="form-control" id="inputEmail4" required>
+                <input type="email" class="form-control" id="inputEmail4" name="email" required>
                 <small id="emailHelp" class="form-text text-muted"> <em> Nunca compartiremos su email con
                     nadie.</em></small>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputUsuario"> <strong>Usuario</strong></label>
-                <input type="text" class="form-control" id="Usuario" name="Usuario" required>
+                <input type="text" class="form-control" id="Usuario" name="nombreausuario" required>
                 <small id="UsuarioHelp" class="form-text text-muted"> <em> Escriba su nombre de usuario original.</em></small>
               </div>
               <br>
               <div class="form-group col-md-6">
                 <label for="inputPassword4"> <strong>Password</strong></label>
                 <div style="display: flex;">
-                  <input type="password" class="form-control" id="inputPassword4" required>
+                  <input type="password" class="form-control" id="inputPassword4" name="passusuario"passusuario required>
                   <button id="show_password" class="btn btn-primary btn_verde" type="button" onclick="mostrarPassword()"> <span
                       class="fa fa-eye-slash icon"></span> </button>
                 </div>
@@ -54,19 +54,19 @@
             <br>
             <div class="form-group col-md-6">
               <label for="inputAddress"> <strong> Dirección</strong></label>
-              <input type="text" class="form-control" id="inputAddress" required>
+              <input type="text" class="form-control" id="inputAddress" name="direccion" required>
               <small id="direccionHelp" class="form-text text-muted"><em> Calle, nº, piso, puerta</em></small>
             </div>
             <br>
             <div class="row col">
               <div class="col-md-4">
                 <label for="inputNombre"><strong>Nombre</strong></label>
-                <input type="text" class="form-control" id="inputName" required>
+                <input type="text" class="form-control" id="inputName" name="nombre" required>
                 <small id="emailHelp" class="form-text text-muted"> <em> Nombre </em></small>
               </div>
               <div class="col-md-7">
                 <label for="inputNombre2"><strong>Apellidos</strong></label>
-                <input type="text" class="form-control" id="inputName2" required>
+                <input type="text" class="form-control" id="inputName2" name="apellidos" required>
                 <small id="emailHelp" class="form-text text-muted"> <em> Apellidos </em></small>
               </div>
 
@@ -76,12 +76,12 @@
             <div class="row col-md">
               <div class="form-group col-md-4">
                 <label for="inputCity"><strong>Ciudad</strong></label>
-                <input type="text" class="form-control" id="inputCity" required>
+                <input type="text" class="form-control" id="inputCity" name="ciudad" required>
               </div>
               <br>
               <div class="form-group col-md-3">
                 <label for="inputState"><strong>Provincia</strong></label>
-                <select id="inputState" class="form-control">
+                <select id="inputState" class="form-control" name="provincia">
                   <option selected>Selecciona una...</option>
                   <option value='1'>Álava</option>
                   <option value='2'>Albacete</option>
@@ -140,7 +140,7 @@
 
               <div class="form-group col-md-3">
                 <label for="inputZip"><strong>Código Postal</strong></label>
-                <input type="number" class="form-control" id="inputZip" required>
+                <input type="number" class="form-control" id="inputZip" name="cp" required>
               </div>
 
             </div>

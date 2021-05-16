@@ -37,6 +37,7 @@ public class ClienteController {
 		
 		return "ProyectoS/clientes_new";
 	}
+	
 
 	@PostMapping("/clientes_new")
 	public String clientePost(@RequestParam("nombreacliente") String nombrecliente, 
@@ -87,5 +88,14 @@ public class ClienteController {
 		return "redirect:/cliente";
 	}
 	
+	@PostMapping("/buscarcliente")
+	public String clienteFind(@RequestParam ("nombre") String nombre, Model model){
+		
+		List<Cliente> clientes = clientesService.findParam(nombre);
+		
+		model.addAttribute("clientes", clientes);
+		
+		return "ProyectoS/cliente";
+	}
 	
 }

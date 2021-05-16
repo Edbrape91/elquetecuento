@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.curso.odoo.cliente.model.Cliente;
 import com.curso.odoo.cliente.repo.ClienteRepo;
+import com.curso.odoo.usuario.model.Usuario;
 
 @Service
 public class ClienteService {
@@ -30,6 +31,10 @@ public class ClienteService {
 	
 	public void delete(Integer idClient) {
 		clienteRepo.deleteById(idClient);
+	}
+	
+	public List<Cliente> findParam(String Nombre){
+		return clienteRepo.findElement(Nombre);
 	}
 
 }

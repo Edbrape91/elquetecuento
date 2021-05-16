@@ -70,14 +70,15 @@
 			<div class="col-6">
 				<span class="titulopagina">Cliente</span>
 			</div>
+			<form action="/buscarcliente" method="post">
 			<div class="col-6">
 				<div class="input-group mb-3">
-					<input type="text" class="form-control busqueda"
-						placeholder="Buscar..."> <i class="fa fa-search"
-						style="color: #ccc; padding-top: 10px; padding-right: 20px"></i>
+					<input type="text" class="form-control busqueda" name="nombre"
+						placeholder="Buscar..."> <button type="submit" class="btn-secondary boton1 "><i class="fa fa-search"
+						style="color: #ccc; padding-top: 10px; padding-right: 20px"></i></button>
 				</div>
 			</div>
-
+			</form>
 		</div>
 
 		<div class="row pb-3" style="border-bottom: solid 2px lightgray;">

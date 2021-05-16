@@ -17,13 +17,13 @@ public class EstadoPagoController {
 	@Autowired
 	private EstadoPagoService estadoPagoService;
 
-	@GetMapping("/EstadoPago")
+	@GetMapping("/estadopago")
 	public String estadopago(Model model) {
 
 		return "ProyectoS/EstadoPago";
 	}
 
-	@PostMapping("/EstadoPago")
+	@PostMapping("/estadopago")
 	public String estadopagoPost(@RequestParam("codigoestadopago") Integer codigoestadopago,
 			@RequestParam("nombreestadopago") String nombreestadopago) {
 
@@ -34,7 +34,7 @@ public class EstadoPagoController {
 
 		estadoPagoService.save(estadopago_1);
 
-		return "ProyectoS/EstadoPago";
+		return "redirect:/estadopago";
 	}
 
 }

@@ -40,74 +40,62 @@ public class HomeController {
 	}
 
 	
-	@GetMapping("/login")
-	public String login() {
-
-		return "ProyectoS/login";
-	}
-
-	@GetMapping("/registro")
-	public String registro() {
-
-		return "ProyectoS/registro";
-	}
-
-
+	
 	@GetMapping("/index")
 	public String index() {
 
 		return "ProyectoS/index";
 	}
 
-	
-	// 1. Mapeo
-	// RECEPTOR DEL FORMULARIO DE LOGIN
-	@PostMapping("/login")
-	public String login(@RequestParam String userInput, @RequestParam String passwordInput, Model model) {
-		System.out.println("RECEPTOR DEL FORMULARIO user:" + userInput + " password:" + passwordInput);
-
-		// 2. lógica de negocio
-		// basee de datos y comprobar que ese usuario y usa contraseña están dados de
-		// alta en el sistema
-		boolean loginOk = (userInput.equalsIgnoreCase("Evaristo") && passwordInput.equalsIgnoreCase("Evaristo1234")); // contactará
-																														// con
-																														// la
-																														// bd
-																														// en
-																														// realidad
-
-		// 3. preparación de la visual o devolución al navegador
-		model.addAttribute("loginOk", loginOk);
-
-		if (loginOk) {
-			System.out.println("login ok");
-			return "redirect:/ProyectoS/index?welcome=true";
-		} else {
-			System.out.println("login failed");
-			return "ProyectoS/login";
-		}
-	}
-
-	/*
-	 * @GetMapping("/newClientForm") public String newClientForm() {
-	 * 
-	 * return "newClientForm"; }
-	 */
-
-	@PostMapping("/registro")
-	public String register_form_catcher(@RequestParam String name, @RequestParam String lastName,
-			@RequestParam String userName, @RequestParam String email, Model model) {
-
-		if (email.contains("@")) {
-			// redirigirlo al login
-		} else {
-			model.addAttribute("success", false);
-		}
-
-		return "ProyectoS/login";
-
-	}
-
-	
+//	
+//	// 1. Mapeo
+//	// RECEPTOR DEL FORMULARIO DE LOGIN
+//	@PostMapping("/login")
+//	public String login(@RequestParam String userInput, @RequestParam String passwordInput, Model model) {
+//		System.out.println("RECEPTOR DEL FORMULARIO user:" + userInput + " password:" + passwordInput);
+//
+//		// 2. lógica de negocio
+//		// basee de datos y comprobar que ese usuario y usa contraseña están dados de
+//		// alta en el sistema
+//		boolean loginOk = (userInput.equalsIgnoreCase("Evaristo") && passwordInput.equalsIgnoreCase("Evaristo1234")); // contactará
+//																														// con
+//																														// la
+//																														// bd
+//																														// en
+//																														// realidad
+//
+//		// 3. preparación de la visual o devolución al navegador
+//		model.addAttribute("loginOk", loginOk);
+//
+//		if (loginOk) {
+//			System.out.println("login ok");
+//			return "redirect:/ProyectoS/index?welcome=true";
+//		} else {
+//			System.out.println("login failed");
+//			return "ProyectoS/login";
+//		}
+//	}
+//
+//	/*
+//	 * @GetMapping("/newClientForm") public String newClientForm() {
+//	 * 
+//	 * return "newClientForm"; }
+//	 */
+//
+//	@PostMapping("/registro")
+//	public String register_form_catcher(@RequestParam String name, @RequestParam String lastName,
+//			@RequestParam String userName, @RequestParam String email, Model model) {
+//
+//		if (email.contains("@")) {
+//			// redirigirlo al login
+//		} else {
+//			model.addAttribute("success", false);
+//		}
+//
+//		return "ProyectoS/login";
+//
+//	}
+//
+//	
 	
 }

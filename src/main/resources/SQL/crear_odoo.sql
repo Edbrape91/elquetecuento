@@ -12,6 +12,19 @@
 
 use odoo;
 
+CREATE TABLE usuario (
+    codigousuario  INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nombreausuario  VARCHAR(30) NOT NULL,
+    passusuario VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL, 
+    direccion VARCHAR(50) NOT NULL, 
+    nombre VARCHAR(30) NOT NULL, 
+    apellidos VARCHAR(50) NOT NULL, 
+    ciudad VARCHAR(50) NOT NULL, 
+    provincia VARCHAR(50) NOT NULL, 
+    cp INTEGER NOT NULL 
+);
+
 CREATE TABLE actividad (
     codigoactividad  INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombreactividad  VARCHAR(100) NOT NULL
