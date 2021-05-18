@@ -38,13 +38,11 @@ public class ComercialController {
 	}
 
 	@PostMapping("/comercial")
-	public String comercialPost(@RequestParam("codigocomercial") Integer codigocomercial,
-			  @RequestParam("nombrecomercial") String nombrecomercial, 
+	public String comercialPost(@RequestParam("nombrecomercial") String nombrecomercial, 
 			  @RequestParam("apellidoscomercial") String apellidoscomercial) {
 
 		Comercial comercial_1 = new Comercial();
 
-		comercial_1.setCodigocomercial(codigocomercial);
 		comercial_1.setNombrecomercial(nombrecomercial);
 		comercial_1.setApellidoscomercial(apellidoscomercial);
 		

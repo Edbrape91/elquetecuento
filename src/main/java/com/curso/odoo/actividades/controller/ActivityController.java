@@ -27,7 +27,7 @@ public class ActivityController {
 		//Pedir a la base de datos las actividades
 		List <Activity> actividades = activityService.find(); 
 	
-		//Pasarselas a la web(a traves del modelo)
+		//Pasarselas a la web(a traves del model)
 		model.addAttribute("Actividades", actividades);
 		return "ProyectoS/ActividadesListadas";
 	}

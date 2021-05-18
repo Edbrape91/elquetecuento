@@ -12,7 +12,11 @@ import com.curso.odoo.usuario.model.Usuario;
 @Repository
 public interface UsuarioRepo extends JpaRepository<Usuario, Integer> {
 	
-	@Query("SELECT nombreausuario, passusuario  FROM Usuario where nombreausuario = :nombre and passusuario = :pass") 
-	List<Usuario> findElement(@Param("nombre") String  nombre, @Param("pass") String  pass);
+	// Query nativa
+	@Query(value="SELECT * FROM Usuario WHERE nombreausuario = ?1 AND passusuario = ?2", nativeQuery=true) 
+	List<Usuario> findElement(String  nombreausuario, String  passusuario);
+
+	// query method
+	List<Usuario> findByNombreausuarioAndPassusuario(String nombre, String pass);
 	
 }

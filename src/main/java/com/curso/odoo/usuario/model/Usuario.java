@@ -13,7 +13,7 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private int codigousuario;
+	private Integer codigousuario;
 	@Column
 	private String nombreausuario;
 	@Column
@@ -31,13 +31,13 @@ public class Usuario {
 	@Column
 	private String provincia;
 	@Column
-	private int cp;
+	private Integer cp;
 	
 	
-	public int getCodigousuario() {
+	public Integer getCodigousuario() {
 		return codigousuario;
 	}
-	public void setCodigousuario(int codigousuario) {
+	public void setCodigousuario(Integer codigousuario) {
 		this.codigousuario = codigousuario;
 	}
 	public String getNombreausuario() {
@@ -88,10 +88,10 @@ public class Usuario {
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
 	}
-	public int getCp() {
+	public Integer getCp() {
 		return cp;
 	}
-	public void setCp(int cp) {
+	public void setCp(Integer cp) {
 		this.cp = cp;
 	}  
 	

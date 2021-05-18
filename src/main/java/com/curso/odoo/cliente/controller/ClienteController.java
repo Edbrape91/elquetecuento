@@ -1,6 +1,7 @@
 package com.curso.odoo.cliente.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,12 +12,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.curso.odoo.cliente.model.Cliente;
 import com.curso.odoo.cliente.service.ClienteService;
+import com.curso.odoo.provincia.model.Provincia;
+import com.curso.odoo.provincia.service.ProvinciaService;
 
 @Controller
 public class ClienteController {
 
 	@Autowired
 	private ClienteService clientesService;
+	@Autowired
+	private ProvinciaService provinciaService;
 	
 	@GetMapping("/cliente")
 	public String listClientes(Model model) {
@@ -34,6 +39,9 @@ public class ClienteController {
 	@GetMapping("/clientes_new")
 	public String clienteForm(Model model) {
 		
+		List<Provincia> provincia = provinciaService.find(); 
+		
+		model.addAttribute("provincias", provincia);
 		
 		return "ProyectoS/clientes_new";
 	}
@@ -57,11 +65,14 @@ public class ClienteController {
 		
 		Cliente cliente_1 = new Cliente();
 		
+		Provincia p = provinciaService.findId(codigoprovincia);
+		
+		
 		
 		cliente_1.setNombrecliente(nombrecliente);
 		cliente_1.setApellidoscliente(apellidoscliente);
 		cliente_1.setTipocliente(tipocliente);
-		cliente_1.setCodigoprovincia(codigoprovincia);
+		cliente_1.setProvincia(p);
 		cliente_1.setCalle(calle1);
 		cliente_1.setCalle1(calle1);
 		cliente_1.setCiudad(ciudad);

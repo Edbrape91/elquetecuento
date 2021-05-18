@@ -1,11 +1,11 @@
 package com.curso.odoo.factura.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.curso.odoo.actividades.model.Activity;
 import com.curso.odoo.factura.model.Factura;
 import com.curso.odoo.factura.repo.FacturaRepo;
 
@@ -27,5 +27,7 @@ public class FacturaService {
 		facturaRepo.deleteById(idFactura);
 	}
 
-	
+	public Optional<Factura> findId(Integer Id){
+		return facturaRepo.findById(Id);
+	}
 }

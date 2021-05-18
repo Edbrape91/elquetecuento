@@ -35,10 +35,9 @@
 
 }
 
-.busqueda{
+.form-control{
 
-    border: 0;
-    border-bottom: 2px solid grey;
+    border-radius: 5px;
     margin-right: 10px;
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 <meta charset="UTF-8">
@@ -18,6 +18,8 @@
 </head>
 
 <body id="FondoPantalla">
+
+<div id="loginSuccessAlert" class="alert alert-success" th:if="${login == 'success'}">Login correcto</div>
 
 	<div class="cabecera">
 		<div class="logo" style="
@@ -59,7 +61,7 @@
 			<div class="container-fluid" style="text-align: center; justify-content: center;">
 				<div class="iconos" style="justify-content: space-evenly; display: flex;">
 					<div class="">
-						<a href="/cliente"> <img src="img/discuss.png" class="rounded mx-auto d-block" style="width: 70px;">
+						<a href="/cliente"> <img src="img/clientes.png" class="rounded mx-auto d-block" style="width: 70px;">
 						</a>
 						<p class="descripcion" style="text-align: center;">Clientes</p>
 					</div>
@@ -74,14 +76,19 @@
 						<p class="descripcion" style="text-align: center;">Facturación</p>
 					</div>
 					<div class="" style="">
-						<a href="https://archive.org/details/consolelivingroom"> <img src="img/apps.png" class="rounded mx-auto d-block" style="width: 70px;">
+						<a href="/actividades"> <img src="img/actividades.png" class="rounded mx-auto d-block" style="width: 70px;">
 						</a>
-						<p class="descripcion" style="text-align: center;">Aplicaciones</p>
+						<p class="descripcion" style="text-align: center;">Actividades</p>
 					</div>
 					<div class="" style="">
 						<a href="/ajustes"> <img src="img/sett.png" class="rounded mx-auto d-block" style="width: 70px;">
 						</a>
 						<p class="descripcion" style="text-align: center;">Ajustes</p>
+					</div>
+					<div class="" style="">
+						<a href="/comerciales"> <img src="img/comerciales.png" class="rounded mx-auto d-block" style="width: 70px;">
+						</a>
+						<p class="descripcion" style="text-align: center;">Comerciales</p>
 					</div>
 				</div>
 			</div>
@@ -90,5 +97,22 @@
 
 
 </body>
+<script>
+	// qu tienes que hacer??? primero escribelo en castellano
+		//	quiero tener en mi poder la id del loginsucces y que exista
+			
+			//despues quiero que se oculte el banner tras 10 segundos
+			
+	var ocultarLogin = document.getElementById("loginSuccessAlert");
+	
+	if (ocultarLogin){
+		setTimeout(() => {
+			ocultarLogin.style.display = "none";
+		}, 10000)
 
+
+	}
+
+	
+	</script>
 </html>

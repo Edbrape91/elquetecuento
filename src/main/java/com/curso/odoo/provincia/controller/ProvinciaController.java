@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.curso.odoo.pais.service.PaisService;
 import com.curso.odoo.provincia.model.Provincia;
 import com.curso.odoo.provincia.repo.ProvinciaRepo;
 import com.curso.odoo.provincia.service.ProvinciaService;
@@ -16,6 +17,9 @@ public class ProvinciaController {
 	
 	@Autowired
 	private ProvinciaService provinciaService;
+	
+	@Autowired
+	private PaisService paisService;
 	
 	@GetMapping("/provincia")
 	public String provincia(Model model) {

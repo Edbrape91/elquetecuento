@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurar contraseña</title>
+  <link rel="stylesheet" href="css\bootstrap.min.css" />
+  <link rel="stylesheet" href="css\estilo.css">
+  <link rel="stylesheet" href="css\registro.css">
+  
+  <script src="js\jquery-3.6.0.min.js"></script>
+  <script src="js\bootstrap.min.js"></script>
+  <script src="js\popper.js"></script>
+  <script src="https://kit.fontawesome.com/e22ea825df.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="principal">
+    <div class="logo" style="height: fit-content;">
+      <img src="./img/logoPagina.png" class="align-self-start mr-3" height="64px" width="64px">
+    </div>
+    <div class="contenedor">
+      
+      <div class="formulario" style="">
+        <div class="col">
+          <form id="formulario" action="/registro" method="post">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputUsuario"> <strong>Usuario</strong></label>
+                <input type="text" class="form-control" id="Usuario" name="nombreausuario" required>
+                <small id="UsuarioHelp" class="form-text text-muted"> <em> Escriba su nombre de usuario original.</em></small>
+              </div>
+              <br>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4"> <strong>Password</strong></label>
+                <div style="display: flex;">
+                  <input type="password" class="form-control" id="inputPassword4" name="passusuario"passusuario required>
+                  <button id="show_password" class="btn btn-primary btn_verde" type="button" onclick="mostrarPassword()"> <span
+                      class="fa fa-eye-slash icon"></span> </button>
+                </div>
+              </div>
+              <small id="passwordHelp" class="form-text text-muted"> <em> La contraseña debe contener mayúsculas,
+                  minúsculas y números.</em></small>
+            </div>
+            <br>
+            <div class="form-group col-md-6">
+              <label for="inputAddress"> <strong>Confirma la contraseña</strong></label>
+              <input type="text" class="form-control" id="inputAddress" name="direccion" required>
+              <small id="direccionHelp" class="form-text text-muted"><em> Vuelve a escribir la contraseña</em></small>
+            </div>
+            <br>
+            </div>
+            <br>          
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                <label class="form-check-label" for="gridCheck">
+                  <u> Aceptar las condiciones de Registro</u>
+                </label>
+              </div>
+              <br>
+            </div>
+            <button type="submit" class="btn btn-primary btn_verde">Restaurar Contraseña</button>
+          </form>
+        </div>
+      </div>
+</body>
+<script type="text/javascript">
+  function mostrarPassword() {
+    var cambio = document.getElementById("inputPassword4");
+    if (cambio.type == "password") {
+      cambio.type = "text";
+      $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+    } else {
+      cambio.type = "password";
+      $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+    }
+  }
+
+ //function validarUsuario() {
+
+  //  var correo, contraseña, direccion, nombre, apellidos, ciudad, provincia, codigoPostal, aceptarTerminos;
+
+//    correo = document.getElementById("inputEmail4").value;
+//    contraseña = document.getElementById("inputPassword4").value;
+//    direccion = document.getElementById("inputAddress").value;
+//    nombre = document.getElementById("inputName").value;
+//    ciudad = document.getElementById("inputCity").value;
+//    apellidos = document.getElementById("inputName2").value;
+//    provincia = document.getElementById("inputState").value;
+//    codigoPostal = document.getElementById("inputZip").value;
+//    aceptarTerminos = document.getElementById("gridCheck").value;
+
+
+//  }
+</script>
+
+</html>

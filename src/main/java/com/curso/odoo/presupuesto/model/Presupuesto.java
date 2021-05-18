@@ -7,7 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.curso.odoo.actividades.model.Activity;
+import com.curso.odoo.cliente.model.Cliente;
+import com.curso.odoo.comercial.model.Comercial;
+import com.curso.odoo.estado.model.Estado;
 
 
 
@@ -25,17 +32,25 @@ public class Presupuesto {
 	@Column
 	private Double total;
 	
-	@Column
-	private Integer codigocliente;
 	
-	@Column
-	private Integer codigocomercial;
+	@OneToOne
+	@JoinColumn(name = "codigocliente")
+	private Cliente cliente;
 	
-	@Column
-	private Integer codigoactividad;
 	
-	@Column
-	private Integer codigoestado;
+	@OneToOne
+	@JoinColumn(name = "codigocomercial")
+	private Comercial comercial;
+	
+	
+	@OneToOne
+	@JoinColumn(name = "codigoactividad")
+	private Activity actividad;
+	
+	
+	@OneToOne
+	@JoinColumn(name = "codigoestado")
+	private Estado estado;
 	
 	
 	public Integer getCodigopresupuesto() {
@@ -56,29 +71,30 @@ public class Presupuesto {
 	public void setTotal(Double total) {
 		this.total = total;
 	}
-	public Integer getCodigocliente() {
-		return codigocliente;
+	public Cliente getCliente() {
+		return cliente;
 	}
-	public void setCodigocliente(Integer codigocliente) {
-		this.codigocliente = codigocliente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
-	public Integer getCodigocomercial() {
-		return codigocomercial;
+	public Comercial getComercial() {
+		return comercial;
 	}
-	public void setCodigocomercial(Integer codigocomercial) {
-		this.codigocomercial = codigocomercial;
+	public void setComercial(Comercial comercial) {
+		this.comercial = comercial;
 	}
-	public Integer getCodigoactividad() {
-		return codigoactividad;
+	public Activity getActividad() {
+		return actividad;
 	}
-	public void setCodigoactividad(Integer codigoactividad) {
-		this.codigoactividad = codigoactividad;
+	public void setActividad(Activity actividad) {
+		this.actividad = actividad;
 	}
-	public Integer getCodigoestado() {
-		return codigoestado;
+	public Estado getEstado() {
+		return estado;
 	}
-	public void setCodigoestado(Integer codigoestado) {
-		this.codigoestado = codigoestado;
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
+	
 	
 }

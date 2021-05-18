@@ -20,8 +20,10 @@
 	<div class="container-fluid px-0">
 		<nav class="navbar navbar-expand-lg navbar-dark menus">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="/index"><i
-					class="fas fa-th icononav"></i></a> <a class="navbar-brand"
+				<a class="navbar-brand" href="/index"><img
+					src="./img/logoPagina.png" class="align-self-start mr-3"
+					height="50px" width="50px"></a> 
+				<a class="navbar-brand"
 					href="/index" style="font-weight: bold;">Nuevo Presupuesto</a>
 				<div class="collapse navbar-collapse ps-3"
 					id="navbarSupportedContent">
@@ -35,7 +37,9 @@
 								<li><a class="dropdown-item" href="/facturas">Facturas</a></li>
 								<li><a class="dropdown-item" href="/comerciales">Comerciales</a></li>
 								<li><a class="dropdown-item" href="/cliente">Clientes</a></li>
+								<li><a class="dropdown-item" href="/actividades">Actividades</a></li>
 							</ul></li>
+							</ul>
 				</div>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -47,15 +51,9 @@
 						<li class="nav-item"><a class="nav-link" href="#"> <i
 								class="far fa-clock"></i>
 						</a></li>
-						<li class="nav-item dropdown pt-2 "><a
-							class="nav-item dropdown-toggle icono" href="#"
-							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false"><i class="fas fa-tools"></i></a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Opcion 1</a></li>
-								<li><a class="dropdown-item" href="#">Opcion 2</a></li>
-								<li><a class="dropdown-item" href="#">Opcion 3</a></li>
-							</ul></li>
+						<li class="nav-item pt-2 "><a class="nav-item icono"
+							href="/ajustes" id="navbarSettings" role="button"><i
+								class="fas fa-tools" aria-hidden="true"></i></a></li>
 						<li class="nav-item"><a class="nav-link" href="#"><i
 								class="fas fa-user-circle nav-item"></i>Elquetecuento</a></li>
 					</ul>
@@ -105,7 +103,7 @@
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Total</strong></label> 
+											<label for="inputTotal"> <strong>Total</strong></label> 
 											<input type="number" class="form-control"
 												id="total" name="total" required> <small
 												id="totalHelp" class="form-text text-muted"> <em>
@@ -113,35 +111,45 @@
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Código de Cliente</strong></label> 
-											<input type="number" class="form-control"
-												id="codClient" name="codigocliente" required> <small
-												id="clientHelp" class="form-text text-muted"> <em>
-													Escriba el código del cliente.</em></small>
+											<label for="inputClient"> <strong>Cliente</strong></label> 
+											<select class="form-select"
+												id="codClient" name="codigocliente" required>
+												<option>Seleccione...</option>
+												<option th:each="cliente: ${clientes}" 
+													th:value="${cliente.codigocliente}" 
+													th:text="${cliente.nombrecliente}"></option>
+												</select>
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Código de Comercial</strong></label> 
-											<input type="number" class="form-control"
-												id="codComercial" name="codigocomercial" required> <small
-												id="comerHelp" class="form-text text-muted"> <em>
-													Escriba el código del comercial.</em></small>
+											<label for="inputComercial"> <strong>Comercial</strong></label> 
+												<select class="form-select"
+												id="codComercial" name="codigocomercial" required>
+												<option>Seleccione...</option>
+												<option th:each="comercial: ${comerciales}" 
+													th:value="${comercial.codigocomercial}" 
+													th:text="${comercial.nombrecomercial}"></option>
+												</select>
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Código de actividad</strong></label> 
-											<input type="number" class="form-control"
-												id="codAct" name="codigoactividad" required> <small
-												id="comerHelp" class="form-text text-muted"> <em>
-													Escriba el código de la actividad.</em></small>
+											<label for="inputAct"> <strong>Actividad</strong></label> 
+											<select class="form-select" id="codAct" name="codigoactividad" required>
+												<option>Seleccione...</option>
+												<option th:each="actividad: ${actividades}" 
+													th:value="${actividad.codigoactividad}" 
+													th:text="${actividad.nombreactividad}"></option>
+												</select>
 										</div>
 										<br>
 										<div class="form-group col-md-6">
-											<label for="inputUsuario"> <strong>Código de estado</strong></label> 
-											<input type="number" class="form-control"
-												id="codEst" name="codigoestado" required> <small
-												id="comerHelp" class="form-text text-muted"> <em>
-													Escriba el código de estado.</em></small>
+											<label for="inputUsuario"> <strong>Estado</strong></label> 
+												<select class="form-select" id="codEst" name="codigoestado" required>
+												<option> Seleccione....</option>
+												<option th:each="estado: ${estados}" 
+													th:value="${estado.codigoestado}" 
+													th:text="${estado.nombreestado}"></option>
+												</select>
 										</div>
 										<br>
 									</div>

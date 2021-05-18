@@ -1,11 +1,11 @@
 package com.curso.odoo.pais.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.curso.odoo.comercial.model.Comercial;
 import com.curso.odoo.pais.model.Pais;
 import com.curso.odoo.pais.repo.PaisRepo;
 
@@ -24,4 +24,9 @@ public class PaisService {
 	public void save(Pais pais){
 		paisRepo.save(pais);
 	}
+
+	public Optional<Pais> findId(Integer Id){
+		return paisRepo.findById(Id);
+	}
+
 }

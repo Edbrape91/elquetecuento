@@ -1,6 +1,7 @@
 package com.curso.odoo.usuario.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,8 +33,12 @@ public class UsuarioService {
 		usuarioRepo.deleteById(idUsuario);
 	}
 
-	public List<Usuario> findParam(String Nombre , String Pass ){
-		return usuarioRepo.findElement(Nombre, Pass);
+	public List<Usuario> findParam(String nombreausuario , String passusuario ){
+		return usuarioRepo.findElement(nombreausuario, passusuario);
+	}
+	
+	public Optional<Usuario> findId(Integer Id){
+		return usuarioRepo.findById(Id);
 	}
 	
 }

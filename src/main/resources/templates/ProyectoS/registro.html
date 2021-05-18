@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index</title>
+  <title>Registro</title>
   <link rel="stylesheet" href="css\bootstrap.min.css" />
   <link rel="stylesheet" href="css\estilo.css">
   <link rel="stylesheet" href="css\registro.css">
@@ -26,7 +26,7 @@
       
       <div class="formulario" style="">
         <div class="col">
-          <form id="formulario">
+          <form id="formulario" action="/registro" method="post">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4"> <strong>Email</strong></label>
@@ -154,7 +154,7 @@
               </div>
               <br>
             </div>
-            <button type="submit" class="btn btn-primary btn_verde" onclick="validarUsuario()">Registrarse</button>
+            <button type="submit" class="btn btn-primary btn_verde">Registrarse</button>
           </form>
         </div>
       </div>
@@ -173,22 +173,22 @@
     }
   }
 
-  function validarUsuario() {
+ //function validarUsuario() {
 
-    var correo, contraseña, direccion, nombre, apellidos, ciudad, provincia, codigoPostal, aceptarTerminos;
+  //  var correo, contraseña, direccion, nombre, apellidos, ciudad, provincia, codigoPostal, aceptarTerminos;
 
-    correo = document.getElementById("inputEmail4").value;
-    contraseña = document.getElementById("inputPassword4").value;
-    direccion = document.getElementById("inputAddress").value;
-    nombre = document.getElementById("inputName").value;
-    ciudad = document.getElementById("inputCity").value;
-    apellidos = document.getElementById("inputName2").value;
-    provincia = document.getElementById("inputState").value;
-    codigoPostal = document.getElementById("inputZip").value;
-    aceptarTerminos = document.getElementById("gridCheck").value;
+//    correo = document.getElementById("inputEmail4").value;
+//    contraseña = document.getElementById("inputPassword4").value;
+//    direccion = document.getElementById("inputAddress").value;
+//    nombre = document.getElementById("inputName").value;
+//    ciudad = document.getElementById("inputCity").value;
+//    apellidos = document.getElementById("inputName2").value;
+//    provincia = document.getElementById("inputState").value;
+//    codigoPostal = document.getElementById("inputZip").value;
+//    aceptarTerminos = document.getElementById("gridCheck").value;
 
 
-  }
+//  }
 </script>
 
 </html>

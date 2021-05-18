@@ -16,7 +16,7 @@
 
 </head>
 
-<body style="overflow-y: hidden;">
+<body style="">
 
 	<div class="container-fluid px-0">
 		<nav class="navbar navbar-expand-lg navbar-dark menus">
@@ -70,15 +70,17 @@
 			<div class="col-6">
 				<span class="titulopagina">Cliente</span>
 			</div>
-			<form action="/buscarcliente" method="post">
+			
 			<div class="col-6">
+			<form action="/buscarcliente" method="post">
 				<div class="input-group mb-3">
-					<input type="text" class="form-control busqueda" name="nombre"
-						placeholder="Buscar..."> <button type="submit" class="btn-secondary boton1 "><i class="fa fa-search"
+					<input type="text" class="form-control" name="nombre"
+						placeholder="Buscar..."> <button type="submit" class="btn btn-secondary boton1 "><i class="fa fa-search"
 						style="color: #ccc; padding-top: 10px; padding-right: 20px"></i></button>
 				</div>
-			</div>
 			</form>
+			</div>
+					
 		</div>
 
 		<div class="row pb-3" style="border-bottom: solid 2px lightgray;">
@@ -115,25 +117,25 @@
 					Clientes(<span th:text="${clientes.size()}"></span>)
 				</h3>
 				<br>
-				<div style="overflow: auto; white-space: nowrap; width: 100%; height: 7%;">
-				<table class="table tablita">
+				<!--  <div style="overflow: auto; white-space: nowrap; width: 100%; height: 7%;">-->
+				<table class="table">
 					<thead>
 						<tr>
 							<th scope="col"><input type="checkbox" /></th>
-							<th scope="col">Código Cliente</th>
+							<!--<th scope="col">Código Cliente</th>-->
 							<th scope="col">Nombre Cliente</th>
 							<th scope="col">Apellidos Cliente</th>
-							<th scope="col">Tipo Cliente</th>
-							<th scope="col">Código provincia</th>
+							<!--<th scope="col">Tipo Cliente</th>-->
+							<th scope="col">Provincia</th>
 							<th scope="col">Calle</th>
-							<th scope="col">Calle1</th>
+							<!--<th scope="col">Calle1</th>-->
 							<th scope="col">Ciudad</th>
-							<th scope="col">Código Postal</th>
-							<th scope="col">NIF</th>
+							<!--<th scope="col">Código Postal</th>-->
+							<!--<th scope="col">NIF</th>-->
 							<th scope="col">Teléfono</th>
-							<th scope="col">Móvil</th>
+							<!--<th scope="col">Móvil</th>-->
 							<th scope="col">Email</th>
-							<th scope="col">Página Web</th>
+							<!--<th scope="col">Página Web</th>-->
 							<th scope="col">Categorías</th>
 							<th scope="col"></th>
 						</tr>
@@ -144,26 +146,26 @@
 					<tbody th:remove="all-but-first">
 						<tr th:each="cliente : ${clientes}">
 							<td scope="row"><input type="checkbox" name="check"/></td>
-							<td><span th:text=${cliente.codigocliente}></span></td>
+							<!--<td><span th:text=${cliente.codigocliente}></span></td>-->
 							<td><span th:text=${cliente.nombrecliente}></span></td>
 							<td><span th:text=${cliente.apellidoscliente}></span></td>
-							<td><span th:text=${cliente.tipocliente}></span></td>
-							<td><span th:text=${cliente.codigoprovincia}></span></td>
+							<!--<td><span th:text=${cliente.tipocliente}></span></td>-->
+							<td><span th:text=${cliente.provincia.nombreprovincia}></span></td>
 							<td><span th:text=${cliente.calle}></span></td>
-							<td><span th:text=${cliente.calle1}></span></td>
+							<!--  <td><span th:text=${cliente.calle1}></span></td>-->
 							<td><span th:text=${cliente.ciudad}></span></td>
-							<td><span th:text=${cliente.codigopostal}></span></td>
-							<td><span th:text=${cliente.nif}></span></td>
+							<!--<td><span th:text=${cliente.codigopostal}></span></td>-->
+							<!--<td><span th:text=${cliente.nif}></span></td>-->
 							<td><span th:text=${cliente.telefono}></span></td>
-							<td><span th:text=${cliente.movil}></span></td>
+							<!--<td><span th:text=${cliente.movil}></span></td>-->
 							<td><span th:text=${cliente.email}></span></td>
-							<td><span th:text=${cliente.paginaweb}></span></td>
+							<!--<td><span th:text=${cliente.paginaweb}></span></td>-->
 							<td><span th:text=${cliente.categorias}></span></td>
-							<td><a th:href="@{/cliente_borrar(idCliente=${cliente.codigocliente})}" class="btn boton1 ">Borrar</a></td>
+							<td><a th:href="@{/cliente_borrar(idCliente=${cliente.codigocliente})}" class="btn btn-secondary boton1 ">Borrar</a></td>
 						</tr>
 					</tbody>
 				</table>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>

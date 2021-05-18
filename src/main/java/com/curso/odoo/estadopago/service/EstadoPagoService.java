@@ -23,4 +23,7 @@ public class EstadoPagoService {
 		estadoPagoRepo.save(estadopago);
 	}
 
+	public EstadoPago findId(Integer Id){
+		return estadoPagoRepo.findById(Id).orElseThrow();
+	}
 }

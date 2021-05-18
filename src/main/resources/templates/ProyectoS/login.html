@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Index</title>
+<title>Login</title>
 <link rel="stylesheet" href="css\bootstrap.min.css" />
 <link rel="stylesheet" href="css\estilo.css">
 <link rel="stylesheet" href="css\login.css">
@@ -48,17 +48,17 @@
 					<span class="or_span">Or</span>
 				</div>
 					<div class="row col-md">
-					<form>
+					<form id="formularioLogin" action="/login" method="post">
 						<div class="form-group" style="margin-bottom: 15px;">
 							<label for="exampleInputEmail1">Nombre de Usuario</label> <input
 								type="text" class="form-control" id="InputUsuario"
-								name="Usuario" placeholder="Introduzca su usuario">
+								name="nombreausuario" placeholder="Introduzca su usuario">
 						</div>
 						<div class="form-group" style="margin-bottom: 15px;">
 							<label for="InputPassword">Contraseña</label>
 							<div style="display: flex;">
 								<input type="password" class="form-control" id="InputPassword"
-									placeholder="Introduzca su contraseña" style="" name="Contrass">
+									placeholder="Introduzca su contraseña" style="" name="passusuario">
 								<div class="form-group">
 									<button id="show_password" class="btn btn-primary btn_verde"
 										type="button" onclick="mostrarPassword()">
@@ -73,12 +73,12 @@
 								for="exampleCheck1">Recuerda mis credenciales</label>
 						</div>
 						<div style="margin-bottom: 15px;">
-							<a id="BotonAcceso" type="submit" class="btn btn-primary btn_verde" href="/index">Acceder</a>
+							<button id="BotonAcceso" type="submit" class="btn btn-primary btn_verde" >Acceder</button>
 							<a id="BotonRegistro" class="btn btn-primary" href="/registro" role="button">Registrarse</a>
 						</div>
 						<div class="col" style="margin-bottom: 15px;">
 							<h6>¿Has olvidado tu clave o tu usuario?</h6>
-							<a id="BotonRestaurar" class="btn btn-primary-light " style="color: #ffc107" role="button" href="#">Restaurar</a>
+							<a id="BotonRestaurar" class="btn btn-primary-light " style="color: #ffc107" role="button" href="/restaurarcontraseña">Restaurar</a>
 
 						</div>
 					</form>

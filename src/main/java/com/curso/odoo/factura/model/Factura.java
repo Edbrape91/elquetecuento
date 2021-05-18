@@ -7,7 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.curso.odoo.actividades.model.Activity;
+import com.curso.odoo.cliente.model.Cliente;
+import com.curso.odoo.estado.model.Estado;
+import com.curso.odoo.estadopago.model.EstadoPago;
 
 @Entity
 @Table (name="factura")
@@ -17,14 +24,20 @@ public class Factura {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigofactura;
 	
-	@Column
-	private Integer codigocliente;
 	
-	@Column
-	private Integer codigoactividad;
+	@OneToOne
+	@JoinColumn(name="codigocliente")
+	private Cliente cliente;
 	
-	@Column
-	private Integer codigoestado;
+	
+	@OneToOne
+	@JoinColumn(name="codigoactividad")
+	private Activity actividad;
+	
+	
+	@OneToOne
+	@JoinColumn(name="codigoestado")
+	private Estado estado;
 	
 	@Column
 	private	Date fechafactura;
@@ -38,8 +51,10 @@ public class Factura {
 	@Column
 	private Double total;
 	
-	@Column
-	private Integer codigoestadopago;
+	
+	@OneToOne
+	@JoinColumn(name="codigoestadopago")
+	private EstadoPago estadopago;
 	
 	public Integer getCodigofactura() {
 		return codigofactura;
@@ -47,24 +62,16 @@ public class Factura {
 	public void setCodigofactura(Integer codigofactura) {
 		this.codigofactura = codigofactura;
 	}
-	public Integer getCodigocliente() {
-		return codigocliente;
+	
+	
+	
+	public Cliente getCliente() {
+		return cliente;
 	}
-	public void setCodigocliente(Integer codigocliente) {
-		this.codigocliente = codigocliente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
-	public Integer getCodigoactividad() {
-		return codigoactividad;
-	}
-	public void setCodigoactividad(Integer codigoactividad) {
-		this.codigoactividad = codigoactividad;
-	}
-	public Integer getCodigoestado() {
-		return codigoestado;
-	}
-	public void setCodigoestado(Integer codigoestado) {
-		this.codigoestado = codigoestado;
-	}
+	
 	public Date getFechafactura() {
 		return fechafactura;
 	}
@@ -89,12 +96,25 @@ public class Factura {
 	public void setTotal(Double total) {
 		this.total = total;
 	}
-	public Integer getCodigoestadopago() {
-		return codigoestadopago;
+	public Activity getActividad() {
+		return actividad;
 	}
-	public void setCodigoestadopago(Integer codigoestadopago) {
-		this.codigoestadopago = codigoestadopago;
+	public void setActividad(Activity actividad) {
+		this.actividad = actividad;
 	}
+	public Estado getEstado() {
+		return estado;
+	}
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+	public EstadoPago getEstadopago() {
+		return estadopago;
+	}
+	public void setEstadopago(EstadoPago estadopago) {
+		this.estadopago = estadopago;
+	}
+	
 	
 	
 	

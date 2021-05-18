@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FormFacturas</title>
+<title>Editar Factura</title>
 <link rel="stylesheet" href="css\bootstrap.min.css" />
 <link rel="stylesheet" href="css\estilo.css">
 <script src="js\jquery-3.6.0.min.js"></script>
@@ -23,7 +23,7 @@
 				<a class="navbar-brand" href="/index"><img
 					src="./img/logoPagina.png" class="align-self-start mr-3"
 					height="50px" width="50px"></a> <a class="navbar-brand"
-					href="/index" style="font-weight: bold;">Factura Nueva</a>
+					href="/index" style="font-weight: bold;">Factura Edit</a>
 				<div class="collapse navbar-collapse ps-3"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav">
@@ -95,7 +95,8 @@
 											<label for="inputEmail4"> <strong>Código
 													Cliente</strong></label> <select class="form-select" id="CoClient"
 												name="codClient" required>
-												<option>Seleccione su cliente.</option>
+												<option th:text="${Facturas.cliente.nombrecliente}"
+												th:value="${Facturas.cliente.codigocliente}"></option>
 												<option th:each="cliente: ${clientes}"
 													th:value="${cliente.codigocliente}"
 													th:text="${cliente.nombrecliente}"></option>
@@ -107,7 +108,8 @@
 											<label for="inputUsuario"> <strong>Código
 													Actividad</strong></label> <select id="codAct" name="codActi" required
 												class="form-select">
-												<option>Seleccione su actividad.</option>
+												<option th:text="${Facturas.actividad.nombreactividad}"
+												th:value="${Facturas.actividad.codigoactividad}"></option>
 												<option th:each="actividad: ${actividades}"
 													th:value="${actividad.codigoactividad}"
 													th:text="${actividad.nombreactividad}"></option>
@@ -120,7 +122,8 @@
 											<div style="display: flex;">
 												<select class="form-select" id="codEstado"
 													name="codigoEstado" required>
-													<option>Seleccione el estado.</option>
+													<option th:text="${Facturas.estado.nombreestado}"
+													th:value="${Facturas.estado.codigoestado}"></option>
 													<option th:each="estado: ${estados}"
 														th:value="${estado.codigoestado}"
 														th:text="${estado.nombreestado}"></option>
@@ -134,15 +137,17 @@
 										<div class="col-md-4">
 											<label for="inputNombre"><strong>Fecha de
 													Factura</strong></label> <input type="text" class="form-control"
-												id="inputName" name="fechaFactura" required> <small
+												id="inputName" name="fechaFactura" th:value="${Facturas.fechafactura}" required> <small
 												id="emailHelp" class="form-text text-muted"> <em>
 													Inserte la fecha de su factura.</em>
 											</small>
 										</div>
 										<div class="col-md-7">
 											<label for="inputNombre2"><strong>Fecha de
-													Vencimiento</strong></label> <input type="text" class="form-control"
-												id="inputName2" name="venceFactura" required> <small
+													Vencimiento</strong></label> 
+													<input type="text" class="form-control"
+												id="inputName2" name="venceFactura" th:value="${Facturas.fechavencimiento}" required> 
+												<small
 												id="emailHelp" class="form-text text-muted"> <em>Inserte
 													la fecha de vencimiento de su factura.</em></small>
 										</div>
@@ -154,7 +159,7 @@
 										<div class="form-group col-md-4">
 											<label for="inputCity"><strong>Impuestos</strong></label> <input
 												type="text" class="form-control" id="inputCity"
-												name="impuestos" required> <small id="emailHelp"
+												name="impuestos" th:value="${Facturas.impuestos}" required> <small id="emailHelp"
 												class="form-text text-muted"> <em>Inserte los
 													impuestos aplicables.</em>
 											</small>
@@ -163,7 +168,7 @@
 										<div class="form-group col-md-3">
 											<label for="inputState"><strong>Total</strong></label> <input
 												type="text" class="form-control" id="inputName2"
-												name="total" required> <small id="totaldinero"
+												name="total" th:value="${Facturas.total}" required> <small id="totaldinero"
 												class="form-text text-muted"> <em>Total.</em>
 											</small>
 										</div>
@@ -171,8 +176,9 @@
 										<div class="form-group col-md-3">
 											<label for="inputZip"> <strong>Código Estado
 													de Pago</strong></label> <select class="form-select" id="selectpago"
-												name="codEstadoPago" required>
-												<option>Seleccione el estado del pago.</option>
+												name="codEstadoPago"  required>
+												<option th:text="${Facturas.estadopago.nombreestadopago}"
+												th:value="${Facturas.estadopago.codigoestadopago}"></option>
 												<option th:each="estado: ${estadopagos}"
 													th:value="${estado.codigoestadopago}"
 													th:text="${estado.nombreestadopago}"></option>
@@ -184,7 +190,7 @@
 
 									<br> <br>
 							</div>
-							<button type="submit" class="btn boton1">Añadir</button>
+							<button type="submit" class="btn btn-secondary boton1">Añadir</button>
 							</form>
 						</div>
 					</div>

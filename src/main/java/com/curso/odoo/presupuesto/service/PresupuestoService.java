@@ -1,6 +1,7 @@
 package com.curso.odoo.presupuesto.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,10 @@ public class PresupuestoService {
 	public void delete(Integer idPresupuesto) {
 		presupuestoRepo.deleteById(idPresupuesto);
 	}
+	
+	public Optional<Presupuesto> findId(Integer Id){
+		return presupuestoRepo.findById(Id);
+	}
+	
 	
 }

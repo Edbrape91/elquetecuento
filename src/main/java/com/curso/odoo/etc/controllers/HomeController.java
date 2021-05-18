@@ -42,8 +42,10 @@ public class HomeController {
 	
 	
 	@GetMapping("/index")
-	public String index() {
-
+	public String indexLog(@RequestParam(required=false) String login, Model model) {
+		
+		model.addAttribute("login",login);
+		
 		return "ProyectoS/index";
 	}
 

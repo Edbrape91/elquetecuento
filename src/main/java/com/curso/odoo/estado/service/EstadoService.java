@@ -1,6 +1,7 @@
 package com.curso.odoo.estado.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,8 @@ public class EstadoService {
 		estadoRepo.save(estado);
 	}
 	
+	public Estado findId(Integer Id){
+		return estadoRepo.findById(Id).orElseThrow();
+	}
 	
 }

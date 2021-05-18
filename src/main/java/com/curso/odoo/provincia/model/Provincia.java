@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.curso.odoo.pais.model.Pais;
 
 
 
@@ -17,17 +21,20 @@ public class Provincia {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigoprovincia;
 		
-	@Column
-    private Integer codigopais;
+	
+	@OneToOne
+	@JoinColumn(name = "codigopais")
+    private Pais pais;
 			
 	@Column
     private String nombreprovincia;
     
-	public Integer getCodigopais() {
-		return codigopais;
+	
+	public Pais getPais() {
+		return pais;
 	}
-	public void setCodigopais(Integer codigopais) {
-		this.codigopais = codigopais;
+	public void setPais(Pais pais) {
+		this.pais = pais;
 	}
 	public Integer getCodigoprovincia() {
 		return codigoprovincia;

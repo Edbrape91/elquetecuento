@@ -1,9 +1,8 @@
 package com.curso.odoo.presupuesto.controller;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,8 +11,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.curso.odoo.actividades.model.Activity;
+import com.curso.odoo.actividades.service.ActivityService;
+import com.curso.odoo.cliente.model.Cliente;
+import com.curso.odoo.cliente.service.ClienteService;
+import com.curso.odoo.comercial.model.Comercial;
+import com.curso.odoo.comercial.service.ComercialService;
+import com.curso.odoo.estado.model.Estado;
+import com.curso.odoo.estado.service.EstadoService;
 import com.curso.odoo.presupuesto.model.Presupuesto;
-import com.curso.odoo.presupuesto.repo.PresupuestoRepo;
 import com.curso.odoo.presupuesto.service.PresupuestoService;
 
 @Controller
@@ -22,6 +28,18 @@ public class PresupuestoController {
 	
 	@Autowired
 	private PresupuestoService presupuestoService;
+	
+	@Autowired
+	private ActivityService activityService;
+	
+	@Autowired
+	private ClienteService clienteService;
+	
+	@Autowired
+	private ComercialService comercialService;
+	
+	@Autowired
+	private EstadoService estadoService;
 	
 	@GetMapping("/presupuestos")
 	public String presupuestosList(Model model) {
@@ -39,6 +57,16 @@ public class PresupuestoController {
 	@GetMapping("/presupuesto")
 	public String presupuestoForm(Model model) {
 		
+		List<Activity> actividad = activityService.find();
+		List<Cliente> cliente = clienteService.find();
+		List<Comercial> comercial = comercialService.find();
+		List<Estado> estado = estadoService.find();
+		
+		
+		model.addAttribute("actividades", actividad);
+		model.addAttribute("clientes", cliente);
+		model.addAttribute("comerciales", comercial);
+		model.addAttribute("estados", estado);
 		
 		return "ProyectoS/presupuesto";
 	}
@@ -62,11 +90,23 @@ public class PresupuestoController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
+		
+		 Cliente c1 = clienteService.findId(codigocliente);
+		
+        
+         Activity a1 = activityService.findId(codigoactividad);
+         
+         Estado e1= estadoService.findId(codigoestado);
+         
+         Comercial com1= comercialService.findId(codigocomercial);
+		        
+         
+		
 		presupuesto_1.setTotal(total);
-		presupuesto_1.setCodigocliente(codigocliente);
-		presupuesto_1.setCodigocomercial(codigocomercial);
-		presupuesto_1.setCodigoactividad(codigoactividad);
-		presupuesto_1.setCodigoestado(codigoestado);
+		presupuesto_1.setCliente(c1);
+		presupuesto_1.setComercial(com1);
+		presupuesto_1.setActividad(a1);
+		presupuesto_1.setEstado(e1);
 		
 		
 		presupuestoService.save(presupuesto_1);
@@ -82,4 +122,13 @@ public class PresupuestoController {
 		return "redirect:/presupuestos";
 	}
 	
+	@PostMapping("/buscarpresupuesto")
+	public String presupuestoFind(@RequestParam ("Id") Integer Id, Model model){
+		
+		Optional<Presupuesto> presupuesto = presupuestoService.findId(Id);
+		
+		model.addAttribute("presupuestos", presupuesto.get());
+		
+		return "ProyectoS/presupuestos";
+	}
 }

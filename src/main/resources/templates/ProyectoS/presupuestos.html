@@ -21,18 +21,26 @@
 	<div class="container-fluid px-0">
 		<nav class="navbar navbar-expand-lg navbar-dark menus">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="/index"><i
-					class="fas fa-th icononav"></i></a> <a class="navbar-brand"
+				<a class="navbar-brand" href="/index"><img
+					src="./img/logoPagina.png" class="align-self-start mr-3"
+					height="50px" width="50px"></a> 
+				<a class="navbar-brand"
 					href="/index" style="font-weight: bold;">Presupuestos</a>
 				<div class="collapse navbar-collapse ps-3"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav">
-						<li class="nav-item menuder"><a href="/cliente"
-							class="nav-link">Clientes</a></li>
-						<li class="nav-item menuder"><a href="/comerciales" class="nav-link ">Comerciales</a></li>
-						<li class="nav-item menuder"><a href="/facturas" class="nav-link">Facturas</a></li>
-						
-					</ul>
+						<li class="nav-item dropdown pt-1 botonnav"><a
+							class="nav-item dropdown-toggle botonnav" href="#"
+							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">Presupuestos</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="/presupuestos">Presupuestos</a></li>
+								<li><a class="dropdown-item" href="/facturas">Facturas</a></li>
+								<li><a class="dropdown-item" href="/comerciales">Comerciales</a></li>
+								<li><a class="dropdown-item" href="/cliente">Clientes</a></li>
+								<li><a class="dropdown-item" href="/actividades">Actividades</a></li>
+							</ul></li>
+							</ul>
 				</div>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -44,15 +52,9 @@
 						<li class="nav-item"><a class="nav-link" href="#"> <i
 								class="far fa-clock"></i>
 						</a></li>
-						<li class="nav-item dropdown pt-2 "><a
-							class="nav-item dropdown-toggle icono" href="#"
-							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false"><i class="fas fa-tools"></i></a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Opcion 1</a></li>
-								<li><a class="dropdown-item" href="#">Opcion 2</a></li>
-								<li><a class="dropdown-item" href="#">Opcion 3</a></li>
-							</ul></li>
+						<li class="nav-item pt-2 "><a class="nav-item icono"
+							href="/ajustes" id="navbarSettings" role="button"><i
+								class="fas fa-tools" aria-hidden="true"></i></a></li>
 						<li class="nav-item"><a class="nav-link" href="#"><i
 								class="fas fa-user-circle nav-item"></i>Apasoft</a></li>
 					</ul>
@@ -70,11 +72,15 @@
 				<span class="titulopagina">Presupuestos</span>
 			</div>
 			<div class="col-6">
+			<form action="/buscarpresupuesto" method="post">
 				<div class="input-group mb-3">
 					<input type="text" class="form-control busqueda"
-						placeholder="Buscar..."> <i class="fa fa-search"
+						placeholder="Buscar..." name="Id"> <button type="submit" class="btn btn-secondary boton1">
+						<i class="fa fa-search"
 						style="color: #ccc; padding-top: 10px; padding-right: 20px"></i>
+						</button>
 				</div>
+				</form>
 			</div>
 
 		</div>
@@ -97,14 +103,7 @@
 						class="botonesform ms-1">Favoritos</span></i>
 				</button>
 			</div>
-			<div class="col-3 text-end">
-				<button class="btn">
-					<i class="fas fa-list botonesform"></i>
-				</button>
-				<button class="btn">
-					<i class="fas fa-th-large botonesform"></i>
-				</button>
-			</div>
+			
 		</div>
 
 		<div class="row">
@@ -131,11 +130,11 @@
 						<td><span th:text=${presupuesto.codigopresupuesto}></span></td>
 						<td><span th:text=${presupuesto.fechapresupuesto}></span></td>
 						<td><span th:text=${presupuesto.total}></span></td>	
-						<td><span th:text=${presupuesto.codigocliente}></span></td>
-						<td><span th:text=${presupuesto.codigocomercial}></span></td>
-						<td><span th:text=${presupuesto.codigoactividad}></span></td>
-						<td><span th:text=${presupuesto.codigoestado}></span></td>	
-						<td><a th:href="@{/presupuesto_borrar(idPresupuesto=${presupuesto.codigopresupuesto})}" class="btn boton1 ">Borrar</a></td>				
+						<td><span th:text=${presupuesto.cliente.nombrecliente}></span></td>
+						<td><span th:text=${presupuesto.comercial.nombrecomercial}></span></td>
+						<td><span th:text=${presupuesto.actividad.nombreactividad}></span></td>
+						<td><span th:text=${presupuesto.estado.nombreestado}></span></td>	
+						<td><a th:href="@{/presupuesto_borrar(idPresupuesto=${presupuesto.codigopresupuesto})}" class="btn btn-secondary boton1 ">Borrar</a></td>				
 					</tr>
 
 				</tbody>
